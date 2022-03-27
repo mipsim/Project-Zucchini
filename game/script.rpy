@@ -1,4 +1,6 @@
 ﻿define mz = Character("Mark Zucchini-Berg")
+define ph = Character("Punished Hanami")
+define who = Character("???")
 
 # ATL
 transform zoom_dissolve:
@@ -11,8 +13,9 @@ transform zoom_dissolve:
         linear .25 alpha .0 zoom .75
 
 label start:
-    scene bg room
-    show eileen happy at zoom_dissolve
+    scene bg select
+    show zuck base at zoom_dissolve
+    play music "audio/gates.mp3" fadein 2.0
 
     mz "Hi, I’m mark zucchini-berg."
     mz "Welcome to the metaverse."
@@ -57,8 +60,30 @@ menu choice_end:
     "Could you repeat that please?":
         jump start
 
+    "I'm looking for Hanami Kibashi":
+        jump route_ph
+
     "F the metaverse I'm out":
         jump end_game
+
+label route_ph:
+    hide zuck base
+    scene bg dropping
+    play music "audio/chugjug.mp3" fadein 2.0
+
+    who "There you are!"
+    who "So, where are we dropping?"
+    povname "Huh?"
+    who "Ooo, let's go there!"
+    povname "Wait, don't touch m-"
+    "The next thing I know we're falling out of the Party Bus."
+
+    scene bg fortnite
+    show hanami base at zoom_dissolve
+    ph "Nice landing [povname]!"
+    ph "Let's get going, before they take all the good loot."
+
+    jump end_game
 
 label end_game:
     return

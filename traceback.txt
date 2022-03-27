@@ -1,34 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 18, in script
-    mz "Ah, so you want to find [povname]."
-KeyError: u'povname'
+  File "game/script.rpy", line 79, in script
+    pov "Wait, don't touch m-"
+Exception: Sayer 'pov' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 18, in script
-    mz "Ah, so you want to find [povname]."
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1222, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "renpy/character.py", line 1141, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "renpy/character.py", line 1121, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'povname'
+  File "game/script.rpy", line 79, in script
+    pov "Wait, don't touch m-"
+  File "renpy/ast.py", line 681, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "renpy/ast.py", line 574, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'pov' is not defined.
 
 Windows-10-10.0.19041
-Ren'Py 7.4.9.2142
+Ren'Py 7.4.11.2266
 Zucchiniverse 1.0
-Fri Mar 25 23:03:33 2022
+Sun Mar 27 11:17:42 2022
