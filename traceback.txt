@@ -1,22 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 79, in script
-    pov "Wait, don't touch m-"
-Exception: Sayer 'pov' is not defined.
+  File "game/script.rpy", line 196, in script
+    menu choose_date_2:
+SyntaxError: invalid syntax (script.rpy, line 199)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 79, in script
-    pov "Wait, don't touch m-"
-  File "renpy/ast.py", line 681, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'pov' is not defined.
+  File "game/script.rpy", line 196, in script
+    menu choose_date_2:
+  File "renpy/ast.py", line 1688, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "renpy/exports.py", line 1026, in menu
+    condition = renpy.python.py_eval(condition)
+  File "renpy/python.py", line 2274, in py_eval
+    code = py_compile(code, 'eval')
+  File "renpy/python.py", line 835, in py_compile
+    raise e
+SyntaxError: invalid syntax (script.rpy, line 199)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Zucchiniverse 1.0
-Sun Mar 27 11:17:42 2022
+Thu Mar 31 18:54:54 2022

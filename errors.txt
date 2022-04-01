@@ -2,17 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 7: expected 'word' not found.
-    define ??? = Character("???")
-           ^
+File "game/scripts/ph_date.rpy", line 8: expected end of line
+    stop music "audio/zucchini.mp3" fadeout 1.0
+               ^
 
-File "game/script.rpy", line 62: expected statement.
-    ??? "Hey! looks like you finally got here"
-    ^
+File "game/scripts/ph_date.rpy", line 13: expected end of line
+    stop music "audio/chugjug.mp3" fadeout 1.0
+               ^
 
-File "game/script.rpy", line 134: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Play fortnite with Punished Hanami"
-                                        ^
+File "game/scripts/sh_date.rpy", line 7: expected end of line
+    stop music "audio/zucchini.mp3" fadeout 1.0
+               ^
+
+File "game/scripts/sh_date.rpy", line 12: expected end of line
+    stop music "audio/batterup.mp3" fadeout 1.0
+               ^
+
+File "game/scripts/st_date.rpy", line 8: expected end of line
+    stop music "audio/zucchini.mp3" fadeout 1.0
+               ^
+
+File "game/scripts/st_date.rpy", line 13: expected end of line
+    stop music "audio/yoshi.mp3" fadeout 1.0
+               ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Mar 30 20:20:36 2022
+Thu Mar 31 20:58:34 2022

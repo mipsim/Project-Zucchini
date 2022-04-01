@@ -1,135 +1,9 @@
-﻿# Characters
-define mc = Character("You")
-define mz = Character("Mark Zucchiniberg")
-define ph = Character("Punished Hanami")
-define rk = Character("Rock")
-define sh = Character("Shizuha")
-define who = Character("???")
-
-# ATL
-transform zoom_dissolve:
-    xalign 0.5 yalign 1.0
-    alpha .0 zoom .75
-    linear .25 alpha 1.0 zoom 1.0
-    on hide:
-        xalign 0.5 yalign 1.0
-        alpha 1.0 zoom 1.0
-        linear .25 alpha .0 zoom .75
-
-# Opening
+﻿# Start
 label start:
-    scene bg select
-    show zuck base at zoom_dissolve
-    play music "audio/gates.mp3" fadein 2.0
-
-    mz "Hi, I’m mark zucchini-berg."
-    mz "Welcome to the metaverse!"
-    mz "Here at meta we are committed to connecting you to the people you really care about."
-    mz "To do so we developed a new patented peer evaluation n’ interconnection system."
-    mz "Haven’t talked to a friend in weeks?"
-    mz "Don’t worry about it."
-    mz "We’ll remove them from your personal space for you."
-    mz "This way you can avoid those awkward conversations about how you never see each other anymore."
-    mz "If you still care about them, don’t worry."
-    mz "The procedure to get them back is quite simple."
-    mz "Just go to the settings menu and click the “Find my friend” button."
-    mz "It’ll prompt you to enter the friend’s full legal name."
-    mz "Don’t worry if you can’t remember their name off the top of your head."
-    mz "They probably weren’t that good of a friend anyways."
-    mz "In order to ensure the security and privacy of all our users we’ve now added a questionnaire to the find my friend functionality."
-    mz "After entering their full legal name you’ll answer a series of short questions."
-    mz "Don’t worry, there’s nothing on here that good friends wouldn’t know about each other."
-    mz "Just simple questions like:"
-    mz "“What is their favorite color”"
-    mz "“What foods do they like to eat”"
-    mz "“What were they doing between the times of 5p.m. and 7p.m. on sunday march 20th”"
-    mz "Here at meta we are all about giving you the experience you deserve,"
-    mz "with the people you really care about."
-    mz "Welcome,"
-    mz "to the metaverse."
-
-    jump hub_1
-
-label hub_1:
-    hide zuck base
-    scene bg warped
-    play music "audio/chugjug.mp3" fadein 2.0
-
-    "Wow! I'm finally here in the metaverse"
-    "..."
-    "....."
-    "Kinda looks like shit"
-    who "Hey! looks like you finally got here"
-    "Hanami is that you?"
-
-    show hanami base
-
-    ph "That's punished hanami to you"
-    "..."
-    ph "This skin cost me a lot of vbucks ok!"
-    ph "You better not make fun of it"
-    "I'll try my hardest"
-
-    hide hanami base
-    show rock base
-
-    rk "Hey guys, sorry I'm late, it was kinda hard to get the headset on"
-    rk "I get the feeling it wasn't made with rocks in mind"
-    rk "They really need to work on their accessibility"
-    "oh, Shizuha, you're finally here"
-
-    hide rock base
-    show shizuha base
-
-    sh "Yeah, the ID system to get in this game is pretty strict"
-    sh "So it took me a while to get all of my documents"
-
-    hide shizuha base
-    show hanami base
-
-    ph "Well, now that we're all here, what should we do?"
-
-    hide hanami base
-    show zuck base
-
-    mz "Did someone just ask for a tour of our metaverse featureset?"
-
-    hide zuck base
-    show hanami base
-
-    ph "Ummm... no I think we're ok"
-
-    hide hanami base
-    show zuck base
-
-    mz "If you would like to stop the feature tour, please say \"STOP\" or another action you would li-"
-    
-    hide zuck base
-    show hanami base
-
-    ph "STOP!"
-
-    hide hanami base
-    show shizuha base
-
-    sh "STO;P"
-
-    hide shizuha base
-    show rock base
-
-    rk "stop."
-    mc "umm... no thank you mark, we'd really just like to be left alone for now"
-    
-    hide rock base
-    show zuck base
-
-    mz "You have selected the \"All Alone\" entertainment package"
-    mz "I will now split you off for a date with that \"Special Someone\""
-    
-    jump choose_date_1
+    jump intro
 
 menu choose_date_1:
-    mz "Please choose who you want to go on a date with"
+    mz "Please choose who you want to go on a date with."
 
     "Play fortnite with Punished Hanami":
         jump date_hanami
@@ -137,59 +11,134 @@ menu choose_date_1:
     "Go to the hot tub with Shizuha Kibashi":
         jump date_shizuha
 
-    "Hang out with Rock":
-        jump date_rock
+    "Hang out with Stone":
+        jump date_stone
 
 label date_hanami:
-    jump end_game
+    $ ph_date = True
+    $ sh_missing = True
+
+    stop music fadeout 1.0
+    play music "audio/chugjug.mp3" fadein 2.0
+    jump ph_date
 
 label date_shizuha:
-    jump end_game
+    $ sh_date = True
+    $ st_missing = True
 
-label date_rock:
-    jump end_game
+    stop music fadeout 1.0
+    play music "audio/batterup.mp3" fadein 2.0
+    jump sh_date
 
-#    python:
-#        povname = renpy.input("First, what is your name?", length=32)
-#        povname = povname.strip()
+label date_stone:
+    $ st_date = True
+    $ ph_missing = True
 
-#        if not povname:
-#            povname = "Eli"
+    stop music fadeout 1.0
+    play music "audio/yoshi.mp3" fadein 2.0
+    jump st_date
 
-#    mz "Ah, nice to meet you [povname]."
+label hub_2:
+    scene bg warped
+    with dissolve
 
-#    jump choice_end
+    if ph_missing != True:
+        show hanami base at ph_intro_three
+    if sh_missing != True:
+        show shizuha base at sh_intro_two
+    if st_missing != True:
+        show stone base at st_intro_three
+    with easeinright
 
-#menu choice_end:
-#    "What will you do?"
+    if ph_missing and sh_missing:
+        st "Where do you think the other two went?"
+        mc "Well, Hanami usually has baseball practice at this time."
+        mc "Which means Shizuha is probably cleaning the temple."
+        st "Hey."
+        st "Since it's just us now."
+        st "Maybe we could-"
+        mc "Hey look it's Zucchini."
+        jump zucc_return
 
-#    "Could you repeat that please?":
-#        jump start
+    if sh_missing and st_missing:
+        ph "Hellooo?"
+        ph "Mom, stone, where are youuu?"
+        mc "Maybe Shizuha dropped Stone in her bathtub."
+        ph "Dude,"
+        ph "what the hell."
+        jump zucc_return
 
-#    "I'm looking for Hanami Kibashi":
-#        jump route_ph
+    if ph_missing and st_missing:
+        sh "Looks like Hanami's still missing."
+        mc "Don't worry, we'll find her."
+        mc "But, I swear there were four of us when we started playing."
+        mc "What was their name again?"
+        jump zucc_return
 
-#    "F the metaverse I'm out":
-#        jump end_game
+    if ph_missing:
+        st "Hey, we're back."
+        sh "Wait a second..."
+        sh "Hanami?"
+        sh "HANAMI??" with hpunch
+        mc "Shizuha, calm down."
+        st "Yeah I'm sure she-"
+        sh "Shut up stone!"
+        mc "Uh oh Zucchini's coming back."
+        jump zucc_return
 
-#label route_ph:
-#    hide zuck base
-#    scene bg dropping
-#    play music "audio/chugjug.mp3" fadein 2.0
+    if sh_missing:
+        ph "Man that was so much fun!"
+        ph "I can't wait to tell mom about i-"
+        ph "Hey."
+        ph "Stone."
+        st "Yes?"
+        ph "Has my mom come back yet?"
+        st "I don't know. I came back when you two did."
+        mc "Hm, maybe Zucchini saw her."
+        jump zucc_return
 
-#    who "There you are!"
-#    who "So, where are we dropping?"
-#    povname "Huh?"
-#    who "Ooo, let's go there!"
-#    povname "Wait, don't touch m-"
-#    "The next thing I know we're falling out of the Party Bus."
+    if st_missing:
+        ph "Oh, we're back."
+        sh "Not all of us."
+        mc "Where's Stone?"
+        ph "Who?"
+        mc "Oh god, here comes Zucchini again."
+        jump zucc_return
 
-#    scene bg fortnite
-#    show hanami base at zoom_dissolve
-#    ph "Nice landing [povname]!"
-#    ph "Let's get going, before they take all the good loot."
+label zucc_return:
+    show zuck base at mz_intro_two
+    with easeinbottom
+    mz "Welcome back to the plaza!"
+    jump choose_date_2
 
-#    jump end_game
+menu choose_date_2:
+    mz "Would you like to go on another date, or find a friend?"
+
+    "Play fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
+        jump date_hanami
+    
+    "Go to the hot tub with Shizuha Kibashi" if sh_missing != True and sh_date != True:
+        jump date_shizuha
+
+    "Hang out with Stone" if st_missing != True and st_date != True:
+        jump date_stone
+
+    "Find My Friend":
+        if ph_missing != True:
+            hide hanami base
+        if sh_missing != True:
+            hide shizuha base
+        if st_missing != True:
+            hide stone base
+        with easeoutleft
+        
+        show zuck base at center
+        with ease
+
+        jump find_my_friend
+
+    "Enough of the dates!":
+        jump end_game
 
 label end_game:
     return
