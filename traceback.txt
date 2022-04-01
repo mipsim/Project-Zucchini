@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 196, in script
-    menu choose_date_2:
-SyntaxError: invalid syntax (script.rpy, line 199)
+  File "game/scripts/sh_date.rpy", line 37, in script
+    show shizuha base at sh_intro_three
+  File "game/scripts/sh_date.rpy", line 37, in <module>
+    show shizuha base at sh_intro_three
+NameError: name 'sh_intro_three' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 196, in script
-    menu choose_date_2:
-  File "renpy/ast.py", line 1688, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "renpy/exports.py", line 1026, in menu
-    condition = renpy.python.py_eval(condition)
-  File "renpy/python.py", line 2274, in py_eval
-    code = py_compile(code, 'eval')
-  File "renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: invalid syntax (script.rpy, line 199)
+  File "game/scripts/sh_date.rpy", line 37, in script
+    show shizuha base at sh_intro_three
+  File "renpy/ast.py", line 1197, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1156, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "renpy/python.py", line 2276, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/sh_date.rpy", line 37, in <module>
+    show shizuha base at sh_intro_three
+NameError: name 'sh_intro_three' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Zucchiniverse 1.0
-Thu Mar 31 18:54:54 2022
+Fri Apr  1 13:46:44 2022

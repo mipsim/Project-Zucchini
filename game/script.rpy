@@ -27,7 +27,6 @@ label date_shizuha:
     $ st_missing = True
 
     stop music fadeout 1.0
-    play music "audio/batterup.mp3" fadein 2.0
     jump sh_date
 
 label date_stone:
@@ -41,6 +40,8 @@ label date_stone:
 label hub_2:
     scene bg warped
     with dissolve
+
+    play music "audio/zucchini.mp3" fadein 2.0
 
     if ph_missing != True:
         show hanami base at ph_intro_three

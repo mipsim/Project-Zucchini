@@ -41,3 +41,7 @@ transform sh_intro_two:
 
 transform mz_intro_two:
     xalign 0.1
+
+transform tran_bouquet:
+    xalign 0.5
+    yalign 0.5

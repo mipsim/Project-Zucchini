@@ -5,7 +5,7 @@ label intro:
     show zuck base
     with easeinbottom
     
-    play music "audio/zucchini.mp3" fadein 2.0
+    play music "audio/zucchini.mp3"
     
     mz "Hi, I’m Mark Zucchini-berg."
     mz "Welcome to the {i}Metaverse{i}!"
