@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 90: expected statement.
-    showah stone base at midright
-                      ^
+File "game/script.rpy", line 199: expected menuitem
+    if ph_missing != True:
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 31 16:52:27 2022
+Thu Mar 31 18:52:03 2022

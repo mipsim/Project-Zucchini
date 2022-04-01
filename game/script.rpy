@@ -6,6 +6,14 @@ define st = Character("Stone")
 define sh = Character("Shizuha")
 define who = Character("???")
 
+# Variables
+default ph_date = False
+default ph_missing = False
+default st_date = False
+default st_missing = False
+default sh_date = False
+default sh_missing = False
+
 # Animation
 transform ph_intro_one:
     xalign -1.0
@@ -43,7 +51,6 @@ label start:
     with easeinbottom
     
     play music "audio/zucchini.mp3" fadein 2.0
-
     mz "Hi, I’m Mark Zucchini-berg."
     mz "Welcome to the {i}Metaverse{i}!"
     mz "Here at Meta we are committed to connecting you to the people you really care about."
@@ -123,8 +130,8 @@ label hub_1:
     mz "Did someone just ask for a tour of our Metaverse featureset?"
     ph "Ummm... no I think we're ok."
     mz "If you would like to stop the feature tour, please say \"STOP\" or another action you would li-"
-    ph "STOP!"
-    sh "STO;P"
+    ph "STOP!" with hpunch
+    sh "STO;P" with hpunch
     st "stop."
     mc "umm... no thank you mark, we'd really just like to be left alone for now."
     mz "You have selected the \"All Alone\" entertainment package."
@@ -147,17 +154,65 @@ menu choose_date_1:
 label date_hanami:
     "Hanami date"
 
-    jump end_game
+
+    $ ph_date = True
+    $ st_missing = True
+    jump hub_2
 
 label date_shizuha:
     "Shizuha date"
 
-    jump end_game
+    $ sh_date = True
+    $ st_missing = True
+    jump hub_2
 
 label date_stone:
     "Stone date"
 
-    jump end_game
+    $ st_date = True
+    $ ph_missing = True
+    jump hub_2
+
+label hub_2:
+    scene bg warped
+    with dissolve
+
+    if ph_missing != True:
+        show hanami base at ph_intro_three
+    if sh_missing != True:
+        show shizuha base at sh_intro_two
+    if st_missing != True:
+        show stone base at st_intro_three
+    with easeinbottom
+    if st_missing == True:
+        ph "Hey, wasn't there more of us when we logged on?"
+        sh "Hmm, I don't think I remember anyone else being here."
+
+    show zuck base at mz_intro_two
+    with easeinbottom
+    mz "Welcome back from your date!"
+    jump choose_date_2
+
+menu choose_date_2:
+    mz "What would you like to do next?"
+
+    "Play fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
+        jump date_hanami
+    
+    "Go to the hot tub with Shizuha Kibashi" if sh_missing != True and sh_date != True:
+        jump date_shizuha
+
+    "Hang out with Stone" if st_missing != True and st_date != True:
+        jump date_stone
+
+    "Find My Friend":
+        jump find_my_friend
+
+    "Log-off":
+        jump end_game
+
+label find_my_friend:
+    jump choose_date_2
 
 label end_game:
     return
