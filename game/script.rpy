@@ -18,18 +18,24 @@ label date_hanami:
     $ ph_date = True
     $ sh_missing = True
 
+    stop music fadeout 1.0
+    play music "audio/chugjug.mp3" fadein 2.0
     jump ph_date
 
 label date_shizuha:
     $ sh_date = True
     $ st_missing = True
 
+    stop music fadeout 1.0
+    play music "audio/batterup.mp3" fadein 2.0
     jump sh_date
 
 label date_stone:
     $ st_date = True
     $ ph_missing = True
 
+    stop music fadeout 1.0
+    play music "audio/yoshi.mp3" fadein 2.0
     jump st_date
 
 label hub_2:
@@ -42,7 +48,7 @@ label hub_2:
         show shizuha base at sh_intro_two
     if st_missing != True:
         show stone base at st_intro_three
-    with easeinbottom
+    with easeinright
 
     if ph_missing and sh_missing:
         st "Where do you think the other two went?"

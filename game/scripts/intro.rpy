@@ -6,6 +6,7 @@ label intro:
     with easeinbottom
     
     play music "audio/zucchini.mp3" fadein 2.0
+    
     mz "Hi, I’m Mark Zucchini-berg."
     mz "Welcome to the {i}Metaverse{i}!"
     mz "Here at Meta we are committed to connecting you to the people you really care about."
