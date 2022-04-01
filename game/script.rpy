@@ -156,7 +156,8 @@ label date_hanami:
 
 
     $ ph_date = True
-    $ st_missing = True
+    $ sh_missing = True
+
     jump hub_2
 
 label date_shizuha:
@@ -164,6 +165,7 @@ label date_shizuha:
 
     $ sh_date = True
     $ st_missing = True
+
     jump hub_2
 
 label date_stone:
@@ -171,6 +173,7 @@ label date_stone:
 
     $ st_date = True
     $ ph_missing = True
+
     jump hub_2
 
 label hub_2:
@@ -184,13 +187,64 @@ label hub_2:
     if st_missing != True:
         show stone base at st_intro_three
     with easeinbottom
-    if st_missing == True:
+
+    if ph_missing and sh_missing:
+        st "Where do you think the other two went?"
+        mc "Well, Hanami usually has baseball practice at this time."
+        mc "Which means Shizuha is probably cleaning the temple."
+        st "Hey."
+        st "Since it's just us now."
+        st "Maybe we could-"
+        mc "Hey look it's Zucchini."
+        jump zucc_return
+
+    if sh_missing and st_missing:
+        ph "Hellooo?"
+        ph "Mom, stone, where are youuu?"
+        mc "Maybe Shizuha dropped Stone in her bathtub."
+        ph "Dude,"
+        ph "what the hell."
+        jump zucc_return
+
+    if ph_missing and st_missing:
+        sh "Hanami?"
+        mc "Uh oh, Stone's "
+        st "Where did the other two go?"
+        mc "Maybe they had to leave together?"
+        mc "I know Hanami usually has baseball practice at this time."
+        jump zucc_return
+
+    if ph_missing:
+        st "Hey, we're back."
+        sh "Wait a second..."
+        sh "Hanami?"
+        sh "HANAMI??" with hpunch
+        mc "Shizuha, calm down."
+        st "Yeah I'm sure she-"
+        sh "Shut up stone!"
+        mc "Uh oh Zucchini's coming back."
+        jump zucc_return
+
+    if sh_missing:
+        ph "Man that was so much fun!"
+        ph "I can't wait to tell mom about i-"
+        ph "Hey."
+        ph "Stone."
+        st "Yes?"
+        ph "Has my mom come back yet?"
+        st "I don't know. I came back when you two did."
+        mc "Hm, maybe Zucchini saw her."
+        jump zucc_return
+
+    if st_missing:
         ph "Oh, we're back."
         sh "Not all of us."
         mc "Where's Stone?"
         ph "Who?"
         mc "Oh god, here comes Zucchini again."
+        jump zucc_return
 
+label zucc_return:
     show zuck base at mz_intro_two
     with easeinbottom
     mz "Welcome back to the plaza!"
@@ -209,43 +263,57 @@ menu choose_date_2:
         jump date_stone
 
     "Find My Friend":
+        if ph_missing != True:
+            hide hanami base
+        if sh_missing != True:
+            hide shizuha base
+        if st_missing != True:
+            hide stone base
+        with easeoutleft
+        
+        show zuck base at center
+        with ease
+
         jump find_my_friend
 
     "Enough of the dates!":
         jump end_game
 
 label find_my_friend:
-    if ph_missing != True:
-        hide hanami base
-    if sh_missing != True:
-        hide shizuha base
-    if st_missing != True:
-        hide stone base
-    with easeoutleft
-    
-    show zuck base at center
-    with ease
-    
     mz "Who would you like to find?"
 
-    python:
+    python: # Player types in name of Character
         search_name = renpy.input("Enter first and last name (case insensitive)", length=32)
         search_name = search_name.strip()
 
-    if search_name == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
-        mz "Oh, don't worry about me. I'd never leave you on your own."
-        jump hub_2
-
     if search_name == "Hanami Kibashi" or search_name == "hanami kibashi":
-        $ ph_missing = False
         # Add Hanami back to the pool of available characters
         # Then go play a short reunion that's cut short by the zucc
         # back again to the hub_2
-        jump hub_2
+        $ ph_missing = False
+
+        show hanami base at center
+        with easeinright
+
+        st "Yo! I'm not in the Spirit Realm anym-"
+        hide hanami base
+        with easeoutleft
+
+        mz "Congratulations on finding Hanami Kibashi!"
+        jump after_search
 
     if search_name == "Shizuha Kibashi" or search_name == "shizuha kibashi":
         $ sh_missing = False
-        jump hub_2
+
+        show shizuha base at center
+        with easeinright
+
+        sh "Aw, I knew you could never forget m-"
+        hide shizuha base
+        with easeoutleft
+
+        mz "Congratulations on finding Shizuha Kibashi!"
+        jump after_search
 
     if search_name == "Stone" or search_name == "stone":
         $ st_missing = False
@@ -254,25 +322,33 @@ label find_my_friend:
         with easeinright
 
         st "I'm back! Thank y-"
-
-        show zuck base at center
-        with easeintop
         hide stone base
         with easeoutleft
 
-        mz "Congratulations on finding Stone! Returning to Plaza."
-        jump hub_2
+        mz "Congratulations on finding Stone!"
+        jump after_search
+
+    if search_name == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
+        mz "Oh, don't worry about me. I'd never leave you on your own."
+        jump after_search
 
     if search_name == "Metaverse Zucciniberg" or search_name == "metaverse zucciniberg":
-        scene bg warpedb
-        with hpunch
-        jump hub_2
         # Seems like nothing happened but the background get's weird and true ending is ready to go
+        scene bg warpedb
+        with dissolve and hpunch
+        jump after_search
 
     mz "Sorry, we can't find who you're looking for."
-    mz "Returning to Plaza."
+    jump after_search
 
-    jump hub_2
+menu after_search:
+    "What would you like to do next?"
+
+    "Search again":
+        jump find_my_friend
+
+    "Return to Plaza":
+        jump hub_2
 
 label end_game:
     return

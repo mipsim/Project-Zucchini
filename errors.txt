@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 260: if statement expects a non-empty block.
-    if search_name == "Metaverse Zucciniberg" or search_name == "metaverse zucciniberg":
-                                                                                        ^
+File "game/script.rpy", line 265: expected statement.
+    how hanami base at center
+                    ^
+
+File "game/script.rpy", line 278: expected statement.
+    how shizuha base at center
+                     ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 31 19:10:58 2022
+Thu Mar 31 20:03:59 2022
