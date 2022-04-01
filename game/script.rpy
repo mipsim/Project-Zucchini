@@ -6,16 +6,7 @@ define st = Character("Stone")
 define sh = Character("Shizuha")
 define who = Character("???")
 
-# ATL
-transform zoom_dissolve:
-    xalign 0.5 yalign 1.0
-    alpha .0 zoom .75
-    linear .25 alpha 1.0 zoom 1.0
-    on hide:
-        xalign 0.5 yalign 1.0
-        alpha 1.0 zoom 1.0
-        linear .25 alpha .0 zoom .75
-
+# Animation
 transform ph_intro_one:
     xalign -1.0
 
@@ -46,8 +37,12 @@ transform mz_intro_two:
 # Opening
 label start:
     scene bg select
-    show zuck base at zoom_dissolve
-    play music "audio/gates.mp3" fadein 2.0
+    with dissolve
+
+    show zuck base
+    with easeinbottom
+    
+    play music "audio/zucchini.mp3" fadein 2.0
 
     mz "Hi, I’m Mark Zucchini-berg."
     mz "Welcome to the {i}Metaverse{i}!"
@@ -78,9 +73,10 @@ label start:
     jump hub_1
 
 label hub_1:
-    hide zuck base
     scene bg warped
-    play music "audio/zucchini.mp3" fadein 2.0
+
+    hide zuck base
+    with dissolve
 
     "Wow! I'm finally here in the Metaverse."
     "..."
@@ -90,7 +86,8 @@ label hub_1:
     who "Hey! Looks like you finally got here."
     mc "Hanami is that you?"
 
-    show hanami base at zoom_dissolve
+    show hanami base
+    with easeinright
 
     ph "That's {i}Punished{/i} Hanami to you."
     mc "..."
@@ -98,9 +95,9 @@ label hub_1:
     ph "You better not make fun of it."
     mc "I'll try my hardest."
 
-    show hanami base at ph_intro_one
     show stone base at st_intro_one
-    with moveinright
+    show hanami base at ph_intro_one
+    with easeinright
 
     st "Hey guys, sorry I'm late. It was kinda hard to get the headset on."
     st "I get the feeling it wasn't made with stones in mind."
@@ -110,7 +107,7 @@ label hub_1:
     show hanami base at ph_intro_two
     show stone base at st_intro_two
     show shizuha base at sh_intro_one
-    with moveinright
+    with easeinright
 
     sh "Yeah, the ID system to get in this game is pretty strict."
     sh "So it took me a while to get all of my documents."
@@ -121,7 +118,7 @@ label hub_1:
     show hanami base at ph_intro_three
     show stone base at st_intro_three
     show zuck base at mz_intro_two
-    with moveinleft
+    with easeinleft
 
     mz "Did someone just ask for a tour of our Metaverse featureset?"
     ph "Ummm... no I think we're ok."
@@ -161,48 +158,6 @@ label date_stone:
     "Stone date"
 
     jump end_game
-
-#    python:
-#        povname = renpy.input("First, what is your name?", length=32)
-#        povname = povname.strip()
-
-#        if not povname:
-#            povname = "Eli"
-
-#    mz "Ah, nice to meet you [povname]."
-
-#    jump choice_end
-
-#menu choice_end:
-#    "What will you do?"
-
-#    "Could you repeat that please?":
-#        jump start
-
-#    "I'm looking for Hanami Kibashi":
-#        jump route_ph
-
-#    "F the metaverse I'm out":
-#        jump end_game
-
-#label route_ph:
-#    hide zuck base
-#    scene bg dropping
-#    play music "audio/chugjug.mp3" fadein 2.0
-
-#    who "There you are!"
-#    who "So, where are we dropping?"
-#    povname "Huh?"
-#    who "Ooo, let's go there!"
-#    povname "Wait, don't touch m-"
-#    "The next thing I know we're falling out of the Party Bus."
-
-#    scene bg fortnite
-#    show hanami base at zoom_dissolve
-#    ph "Nice landing [povname]!"
-#    ph "Let's get going, before they take all the good loot."
-
-#    jump end_game
 
 label end_game:
     return
