@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 7: expected 'word' not found.
-    define ??? = Character("???")
-           ^
-
-File "game/script.rpy", line 62: expected statement.
-    ??? "Hey! looks like you finally got here"
-    ^
-
-File "game/script.rpy", line 134: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Play fortnite with Punished Hanami"
-                                        ^
+File "game/script.rpy", line 90: expected statement.
+    showah stone base at midright
+                      ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Mar 30 20:20:36 2022
+Thu Mar 31 16:52:27 2022

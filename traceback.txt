@@ -1,22 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 79, in script
-    pov "Wait, don't touch m-"
-Exception: Sayer 'pov' is not defined.
+  File "game/script.rpy", line 112, in script
+    show shizuha base sh_intro_one
+Exception: Image 'shizuha base' does not accept attributes 'sh_intro_one'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 79, in script
-    pov "Wait, don't touch m-"
-  File "renpy/ast.py", line 681, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'pov' is not defined.
+  File "game/script.rpy", line 112, in script
+    show shizuha base sh_intro_one
+  File "renpy/ast.py", line 1197, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1167, in show_imspec
+    atl=atl)
+  File "renpy/exports.py", line 742, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "renpy/display/image.py", line 409, in find_target
+    self.target = target._duplicate(a)
+  File "renpy/display/core.py", line 390, in _duplicate
+    args.extraneous()
+  File "renpy/display/core.py", line 271, in extraneous
+    " ".join(self.args),
+Exception: Image 'shizuha base' does not accept attributes 'sh_intro_one'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Zucchiniverse 1.0
-Sun Mar 27 11:17:42 2022
+Thu Mar 31 18:01:41 2022
