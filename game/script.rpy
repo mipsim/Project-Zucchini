@@ -185,16 +185,19 @@ label hub_2:
         show stone base at st_intro_three
     with easeinbottom
     if st_missing == True:
-        ph "Hey, wasn't there more of us when we logged on?"
-        sh "Hmm, I don't think I remember anyone else being here."
+        ph "Oh, we're back."
+        sh "Not all of us."
+        mc "Where's Stone?"
+        ph "Who?"
+        mc "Oh god, here comes Zucchini again."
 
     show zuck base at mz_intro_two
     with easeinbottom
-    mz "Welcome back from your date!"
+    mz "Welcome back to the plaza!"
     jump choose_date_2
 
 menu choose_date_2:
-    mz "What would you like to do next?"
+    mz "Would you like to go on another date, or find a friend?"
 
     "Play fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
         jump date_hanami
@@ -208,11 +211,68 @@ menu choose_date_2:
     "Find My Friend":
         jump find_my_friend
 
-    "Log-off":
+    "Enough of the dates!":
         jump end_game
 
 label find_my_friend:
-    jump choose_date_2
+    if ph_missing != True:
+        hide hanami base
+    if sh_missing != True:
+        hide shizuha base
+    if st_missing != True:
+        hide stone base
+    with easeoutleft
+    
+    show zuck base at center
+    with ease
+    
+    mz "Who would you like to find?"
+
+    python:
+        search_name = renpy.input("Enter first and last name (case insensitive)", length=32)
+        search_name = search_name.strip()
+
+    if search_name == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
+        mz "Oh, don't worry about me. I'd never leave you on your own."
+        jump hub_2
+
+    if search_name == "Hanami Kibashi" or search_name == "hanami kibashi":
+        $ ph_missing = False
+        # Add Hanami back to the pool of available characters
+        # Then go play a short reunion that's cut short by the zucc
+        # back again to the hub_2
+        jump hub_2
+
+    if search_name == "Shizuha Kibashi" or search_name == "shizuha kibashi":
+        $ sh_missing = False
+        jump hub_2
+
+    if search_name == "Stone" or search_name == "stone":
+        $ st_missing = False
+
+        show stone base at center
+        with easeinright
+
+        st "I'm back! Thank y-"
+
+        show zuck base at center
+        with easeintop
+        hide stone base
+        with easeoutleft
+
+        mz "Congratulations on finding Stone! Returning to Plaza."
+        jump hub_2
+
+    if search_name == "Metaverse Zucciniberg" or search_name == "metaverse zucciniberg":
+        scene bg warpedb
+        with hpunch
+        jump hub_2
+        # Seems like nothing happened but the background get's weird and true ending is ready to go
+
+    mz "Sorry, we can't find who you're looking for."
+    mz "Returning to Plaza."
+
+    jump hub_2
 
 label end_game:
     return
