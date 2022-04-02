@@ -78,6 +78,7 @@ label find_my_friend:
     # [Mark 2]
     if search_name == "Plaza Zucchiniberg" or search_name == "plaza zucchiniberg":
         scene bg warpedb
+        $ pl_found = True 
         with dissolve and hpunch
         jump after_search
 

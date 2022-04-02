@@ -1,5 +1,8 @@
 ﻿# Start
 label start:
+    image plaza_movie = Movie(play="ending.mp4")
+    show plaza_movie
+
     jump intro
 
 menu choose_date_1:

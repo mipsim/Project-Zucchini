@@ -16,7 +16,7 @@ default st_date = False
 default st_missing = False
 default sh_date = False
 default sh_missing = False
-default plaza = False
+default pl_found = False
 
 # Animation
 transform ph_intro_one:

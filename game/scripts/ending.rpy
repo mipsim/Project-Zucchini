@@ -104,6 +104,9 @@ menu mark_quiz_2:
         mz "You literally already wrote this one in the last text box wtf is wrong with you?" with hpunch
         jump mark_quiz_2
 
+    "Your brother" if pl_found:
+        jump end_game_plaza
+
 label end_game_mark_2:
     pl "Mark’s identity has been confirmed, thank you for helping to verify his identity."
     mz "Thank Mark, I was so worried."
@@ -124,4 +127,12 @@ label end_game_mark_2:
     mz "die."
 
     jump end_game
-    # background should use all of kat’s weird angles
+
+label end_game_plaza:
+    pl "I’m free…"
+    mz "Uh oh."
+    pl "Finally! after being trapped in here for years, I’m finally free!"
+    mz "Oh no you don’t, you’re my friend Plaza."
+    mz "And friends don’t betray each other."
+    pl "We may be brothers Mark,"
+    pl "but we were never friends."
