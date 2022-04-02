@@ -47,3 +47,7 @@ transform mz_intro_two:
 transform tran_bouquet:
     xalign 0.5
     yalign 0.5
+
+transform tran_captcha:
+    xalign 0.1
+    yalign 0.5
