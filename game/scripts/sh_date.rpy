@@ -158,7 +158,7 @@ menu sh_choice_2:
     "What should I do?"
 
     "Decline?":
-        "GAME OVER"
+        sy "Date failed. Returning to plaza."
         jump end_game
 
     "Accept of course!":
@@ -273,7 +273,7 @@ menu sh_choice_3:
     "What should I do?"
 
     "It’s so kind of you to share your avatar with your fans!":
-        "GAME OVER"
+        sy "Date failed. Returning to plaza."
         jump end_game
 
     "You must be my friend Sh1zuha!":

@@ -33,7 +33,6 @@ label date_stone:
     $ ph_missing = True
 
     stop music fadeout 1.0
-    play music "audio/yoshi.mp3" fadein 2.0
     jump st_date
 
 label hub_2:
