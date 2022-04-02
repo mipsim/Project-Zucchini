@@ -1,10 +1,10 @@
 # Characters
-define mc = Character("You")
+define mc = Character("You", color ="#33A9FF")
 define mz = Character("Mark Zucchiniberg")
-define ph = Character("Punished Hanami")
-define st = Character("Stone")
-define sh = Character("Shizuha")
-define who = Character("???")
+define ph = Character("Punished Hanami", color ="#EF7587")
+define st = Character("Stone", color ="#ADADAD")
+define sh = Character("Shizuha", color ="#D03A9A")
+define who = Character("???", color ="#F19EAA")
 
 # Variables
 default ph_date = False

@@ -14,6 +14,8 @@ label find_my_friend:
         show hanami base at center
         with easeinright
 
+        play sound "audio/friendfound.mp3"
+
         st "Yo! I'm not in the Spirit Realm anym-"
         hide hanami base
         with easeoutleft
@@ -27,6 +29,8 @@ label find_my_friend:
         show shizuha base at center
         with easeinright
 
+        play sound "audio/friendfound.mp3"
+
         sh "Aw, I knew you could never forget m-"
         hide shizuha base
         with easeoutleft
@@ -39,6 +43,8 @@ label find_my_friend:
 
         show stone base at center
         with easeinright
+
+        play sound "audio/friendfound.mp3"
 
         st "I'm back! Thank y-"
         hide stone base

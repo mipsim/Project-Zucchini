@@ -135,7 +135,7 @@ label sh_date_2:
     "Wait that’s me!"
 
     #[HAPPY SPRITE]
-    "We had our first 50 billion point redemption last night, which means we’re having a hot tub date stream!"
+    sh "We had our first 50 billion point redemption last night, which means we’re having a hot tub date stream!"
 
     "You see a ping pop up on your HUD. It’s an invite to her Meta Space™! No cap no kizzy on god no way you decline this!"
     jump sh_choice_2
@@ -210,10 +210,11 @@ label sh_date_3:
     sh "Must have been one strange beach tri–"
 
     #[SUDDEN BLACK]
+    stop music fadeout 1.0
+
     hide streamtitle
     hide shizuha base
     scene bg black
-    with dissolve
 
     "Uh oh."
     mc "Hello?"
@@ -228,6 +229,7 @@ label sh_date_3:
     sh "Woops looks like my internet died for a second there"
 
     #[BRING BACK VTUBER, SURPRISE SPRITE]
+    play music "audio/giantmiko.mp3" fadein 2.0
     sh "AH–"
     mc "Wait, no way! Your avatar…"
 
