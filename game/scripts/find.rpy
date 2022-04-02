@@ -26,13 +26,13 @@ label find_my_friend:
     if search_name == "Shizuha Kibashi" or search_name == "shizuha kibashi":
         $ sh_missing = False
 
-        show shizuha base at center
+        show shizuha_happy at center
         with easeinright
 
         play sound "audio/friendfound.mp3"
 
         sh "Aw, I knew you could never forget m-"
-        hide shizuha base
+        hide shizuha_happy
         with easeoutleft
 
         mz "Congratulations on finding Shizuha Kibashi!"

@@ -27,7 +27,7 @@ label sh_date:
     hide bouquet shaded
     with dissolve
 
-    show streamtitle 
+    show streamtitle
     with easeintop
     show streamoverlay0
     with easeintop
@@ -44,15 +44,17 @@ label sh_date:
     "I had to use my mom's ethereum wallet to get enough channel points to redeem the hot tub stream."
 
     #[SHIZUHA POPS IN BOTTOM RIGHT CORNER, DO A FUNNY LITTLE PANNING HER UP FROM THE BOTTOM OF THE FRAME IF POSSIBLE]
-    show shizuha base at st_intro_two
-    with easeinbottom
-
     #[HAPPY SPRITE]
+    show shizuha_happy at st_intro_two
+    with easeinbottom
     hide streamoverlay2
     show streamoverlay3
     sh "Ohayo darlings it's your favorite miko mommy!"
 
     #[NEUTRAL SPRITE]
+    hide shizuha_happy
+    show shizuha_neutral at st_intro_two
+
     hide streamoverlay3
     show streamoverlay4
     sh "Are any of my cuties in the chat tonight?"
@@ -87,19 +89,27 @@ menu sh_choice_1:
 
 label sh_date_2:
     #[MAD SPRITE]
+    hide shizuha_neutral
+    show shizuha_mad at st_intro_two
     hide streamoverlay6
     show streamoverlay7
     sh "No dicks in chat milkersfan98!"
 
     #[HAPPY SPRITE]
+    hide shizuha_mad
+    show shizuha_happy at st_intro_two
     hide streamoverlay7
     show streamoverlay8
+    hide streamtitle
+    show streamtitle2
     sh "Thank you for the tier three sub sussyxbaka!"
     hide streamoverlay8
     show streamoverlay9
     sh "Aww that’s so funny shizuh–"
 
     #[SURPRISE SPRITE]
+    hide shizuha_happy
+    show shizuha_surprised at st_intro_two
     hide streamoverlay9
     show streamoverlay10
     "All of a sudden, a 100 Dogecoin donation rolls in!"
@@ -114,6 +124,8 @@ label sh_date_2:
     "Damn him she was just about to say my name on stream!"
 
     #[NEUTRAL SPRITE]
+    hide shizuha_surprised
+    show shizuha_neutral at st_intro_two
     hide streamoverlay13
     show streamoverlay14
     sh "Today we have a very special stream!"
@@ -129,12 +141,14 @@ label sh_date_2:
 
     hide streamoverlay17
     with easeouttop
-    show shizuha base at center
+    show shizuha_neutral at center
     with ease
 
     "Wait that’s me!"
 
     #[HAPPY SPRITE]
+    hide shizuha_neutral
+    show shizuha_happy
     sh "We had our first 50 billion point redemption last night, which means we’re having a hot tub date stream!"
 
     "You see a ping pop up on your HUD. It’s an invite to her Meta Space™! No cap no kizzy on god no way you decline this!"
@@ -154,10 +168,14 @@ label sh_date_3:
     mc "This is so exciting I’ve never been in a girl’s Meta Space™ before!"
 
     #[SMUG SPRITE]
+    hide shizuha_neutral
+    show shizuha_smug
     sh "Aha of course not, you nerd loser."
     mc "Wait what did you just say?"
 
     #[HAPPY SPRITE]
+    hide shizuha_smug
+    show shizuha_happy
     sh "I’m so happy one of my longest watching viewers is finally on my stream!"
     "Oh that must have just been background noise. That’s so silly of me."
     sh "Oh wow is that 5 star Gucci fanny pack on your avatar???"
@@ -166,6 +184,8 @@ label sh_date_3:
 
 
     #[NEUTRAL SPRITE]
+    hide shizuha_happy
+    show shizuha_neutral
     "Her eyes shifted into a sudden squint, boring holes through my avatar."
     sh "Oh! That’s very… nice! That’s a weird coincidence. I think one of my friends has the same bag."
     "Weird. I thought this’d be her first time gazing upon one of these babies."
@@ -174,9 +194,10 @@ label sh_date_3:
 
     scene bg streamertub
     with dissolve
-    show streamtitle
+    show streamtitle2
     with easeintop
-    show shizuha base at st_intro_two
+    hide shizuha_neutral
+    show shizuha_extrasmug at st_intro_two
     with easeinbottom
 
     "Wow. It’s unnervingly warm. Not even going to question how my headset is doing that"
@@ -185,24 +206,34 @@ label sh_date_3:
     mc "I won’t be able to pay for next month’s sub at this rate!"
 
     #[SMUG]
+    hide shizuha_extrasmug
+    show shizuha_smug at st_intro_two
     sh "You’d better start tightening that belt then."
     mc "So what do you like doing outside of streaming Shizuha?"
 
     #[HAPPY]
+    hide shizuha_smug
+    show shizuha_happy at st_intro_two
     sh "Well in my free time, believe it or not, I practice a lot of kendo."
     mc "I have a friend who does that too! She’s actually a big fan of yours and copied your avatar too."
 
     #[SMUG]
+    hide shizuha_happy
+    show shizuha_smug at st_intro_two
     sh "She sounds spiffy! It’d be cool if I could meet her, especially if she’s a viewer."
     "It would be funny to see two Shizuha avatars fighting each other."
 
     #[SURPRISE]
+    hide shizuha_smug
+    show shizuha_surprised at st_intro_two
     who "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW IM DOWN"
     mc "What was that??"
     sh "Oh that was just my da– mn roommate! She’s been really invested in this new Fortnite game mode."
     mc "Oh fair enough. Sounded weirdly familiar though."
 
     #[HAPPY]
+    hide shizuha_surprised
+    show shizuha_happy at st_intro_two
     sh "Do you happen to have any pets? I’ve got some bunnies that I take care of at home!"
     mc "Well, I do have a crab now. My cousin brought it home one day from a beach trip."
     sh "Wait a crab? How do you even take care of a crab?"
@@ -212,7 +243,7 @@ label sh_date_3:
     #[SUDDEN BLACK]
     stop music fadeout 1.0
 
-    hide streamtitle
+    hide streamtitle2
     hide shizuha base
     scene bg black
 
@@ -223,12 +254,15 @@ label sh_date_3:
     #[STREAM OVERLAY DISAPPEARS, HOT TUB STAYS]
     scene bg streamertub
     with dissolve
-    show shizuha base
 
     #[REPLACE SPRITE WITH NORMAL IMAGE, NOT VTUBER]
+    show shizuha base at st_intro_two
     sh "Woops looks like my internet died for a second there"
 
     #[BRING BACK VTUBER, SURPRISE SPRITE]
+    hide shizuha base
+    show shizuha_surprised at st_intro_two
+
     play music "audio/giantmiko.mp3" fadein 2.0
     sh "AH–"
     mc "Wait, no way! Your avatar…"
@@ -252,11 +286,17 @@ label sh_date_4:
     mc "The name! The eerily similar everything! Have you been lying to me this whole time?"
     
     #[NEUTRAL]
+    hide shizuha_surprised
+    show shizuha_neutral at st_intro_two
     sh "I wasn’t lying to you…but I did know who you were when I saw your bag, so I played along."
     mc "Well I hope you had fun messing with me."
     sh "I just didn’t want you to realize it was me behind the cute persona."
     sh "It’s weird, but it makes me happy to relax sometimes."
     mc "You’re usually so stone faced with me and Hanami and Stone, so I couldn’t put two and two together."
+    
+    #[EXTRASMUG]
+    hide shizuha_neutral
+    show shizuha_extrasmug at st_intro_two
     sh "Well the stream’s over now and there’s no more secrets. How about we just play some Choke Slam now?"
     mc "We’re talking about the game right?"
 

@@ -46,7 +46,7 @@ label hub_2:
     if ph_missing != True:
         show hanami base at ph_intro_three
     if sh_missing != True:
-        show shizuha base at sh_intro_two
+        show shizuha_neutral at sh_intro_two
     if st_missing != True:
         show stone base at st_intro_three
     with easeinright
@@ -128,7 +128,7 @@ menu choose_date_2:
         if ph_missing != True:
             hide hanami base
         if sh_missing != True:
-            hide shizuha base
+            hide shizuha_neutral
         if st_missing != True:
             hide stone base
         with easeoutleft
