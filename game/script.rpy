@@ -160,7 +160,10 @@ menu choose_date_2:
         jump find_my_friend
 
     "Enough of the dates!":
-        jump end_game
+        jump ending
 
 label end_game:
+    scene bg black
+    with dissolve
+
     return

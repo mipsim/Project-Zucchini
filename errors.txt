@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/sh_date.rpy", line 52: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Send an emote"
+File "game/script.rpy", line 166: u'black' is not a keyword argument or valid child for the screen statement.
+    screen bg black
                    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Apr  1 13:25:15 2022
+Fri Apr  1 23:49:53 2022
