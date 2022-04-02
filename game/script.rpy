@@ -49,6 +49,11 @@ label hub_2:
         show stone base at st_intro_three
     with easeinright
 
+    if ph_missing and sh_missing and st_missing:
+        "That's weird. Now everyone's gone."
+        "I should probably talk to Mark."
+        jump zucc_return
+
     if ph_missing and sh_missing:
         st "Where do you think the other two went?"
         mc "Well, Hanami usually has baseball practice at this time."
@@ -121,6 +126,24 @@ menu choose_date_2:
 
     "Hang out with Stone" if st_missing != True and st_date != True:
         jump date_stone
+
+    "Chill for a bit" if ph_missing != True or sh_missing != True or st_missing != True:
+        scene bg black
+        with dissolve
+        
+        mc "Well, might as well pass some time."
+
+        if ph_missing != True:
+            $ ph_missing = True
+            jump hub_2
+        elif sh_missing != True:
+            $ sh_missing = True
+            jump hub_2
+        elif st_missing != True:
+            $ st_missing = True
+            jump hub_2
+
+        jump hub_2
 
     "Find My Friend":
         if ph_missing != True:
