@@ -1,28 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/ending.rpy", line 80, in script
-    if mz_ans_1 == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
-  File "game/scripts/ending.rpy", line 80, in <module>
-    if mz_ans_1 == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
-NameError: name 'search_name' is not defined
+  File "game/script.rpy", line 4, in script
+    pause(delay=20)
+  File "renpy/common/000statements.rpy", line 449, in execute_pause
+    delay = eval(p["delay"])
+SyntaxError: invalid syntax (script.rpy, line 4)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/ending.rpy", line 80, in script
-    if mz_ans_1 == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
-  File "renpy/ast.py", line 1898, in execute
-    if renpy.python.py_eval(condition):
-  File "renpy/python.py", line 2276, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scripts/ending.rpy", line 80, in <module>
-    if mz_ans_1 == "Mark Zucchiniberg" or search_name == "mark zucchiniberg":
-NameError: name 'search_name' is not defined
+  File "game/script.rpy", line 4, in script
+    pause(delay=20)
+  File "renpy/ast.py", line 2015, in execute
+    self.call("execute")
+  File "renpy/ast.py", line 2003, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 449, in execute_pause
+    delay = eval(p["delay"])
+  File "renpy/python.py", line 2274, in py_eval
+    code = py_compile(code, 'eval')
+  File "renpy/python.py", line 835, in py_compile
+    raise e
+SyntaxError: invalid syntax (script.rpy, line 4)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Zucchiniverse 1.0
-Sat Apr  2 00:21:14 2022
+Sat Apr  2 00:56:38 2022

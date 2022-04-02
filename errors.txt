@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 166: u'black' is not a keyword argument or valid child for the screen statement.
-    screen bg black
-                   ^
+File "game/script.rpy", line 4: expected statement.
+    renpy.pause(delay = 20.0, hard=False)
+                                         ^
+
+File "game/script.rpy", line 6: expected statement.
+    renpy.pause(delay = 20.0, hard=False)
+                                         ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Fri Apr  1 23:49:53 2022
+Sat Apr  2 00:58:09 2022

@@ -93,7 +93,7 @@ menu mark_quiz_2:
         mz "You literally already wrote this one in the last text box wtf is wrong with you?" with hpunch
         jump mark_quiz_2
 
-    "Squash":
+    "Peach":
         mz "You literally already wrote this one in the last text box wtf is wrong with you?" with hpunch
         jump mark_quiz_2
 
@@ -129,6 +129,9 @@ label end_game_mark_2:
     jump end_game
 
 label end_game_plaza:
+    show plaza_base at pl_end
+    show zuck base at mz_end
+    with easeinright
     pl "I’m free…"
     mz "Uh oh."
     pl "Finally! after being trapped in here for years, I’m finally free!"
@@ -136,3 +139,15 @@ label end_game_plaza:
     mz "And friends don’t betray each other."
     pl "We may be brothers Mark,"
     pl "but we were never friends."
+
+    scene bg black
+    with dissolve
+    stop music fadeout 1.0
+
+    show ending_vid
+    pause
+
+    chq "Thank you for playing Zucchiniverse!"
+    chq "We definitely worked on this more than we originally planned."
+    chq "Peace!"
+    jump end_game

@@ -1,8 +1,6 @@
 ﻿# Start
 label start:
-    image plaza_movie = Movie(play="ending.mp4")
-    show plaza_movie
-
+    stop music fadeout 1.0
     jump intro
 
 menu choose_date_1:
