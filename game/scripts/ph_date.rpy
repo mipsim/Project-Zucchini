@@ -2,21 +2,21 @@ label ph_date:
     scene bg black
     with dissolve
 
-    sy "Discord call sound plays"
-    ph "hey hey join this server, and add me on Fortnite, Xx_BunnyPunter_69 okay?"
+    sy "*Discord call received*"
+    ph "Hey hey join this server, and add me on Fortnite, Xx_BunnyPunter_69 okay?"
     sy "AR notifications stream onto your HUD, the last being a game invite"
 
     scene bg select
     play music "audio/fokehs.mp3" fadein 2.0
     show hanami_speak
     with easeinright
-    ph "*splashing*"
+    ph "*Splashing*"
     who "Ohayo darlings it’s your favorite Miko Mommy!"
     ph "Sorry thats my fucking streamer roommate, where is-"
     sy "*Discord call join*"
     hide hanami_speak
     show kousuke_speak
-    ks "Hellooo ??"
+    ks "Hellooo??"
     hide kousuke_speak
     show hanami_speak
     ph "Yeah Kousuke we can hear you."
@@ -29,7 +29,7 @@ label ph_date:
     hide hanami_speak
     show kousuke_speak
     ks "I can’t hear, hold-"
-    sy "*discord call leave*"
+    sy "*Discord call leave*"
     hide kousuke_speak
     show hanami_speak
     ph "Oh my god."
@@ -55,7 +55,7 @@ label ph_date:
     ph "And for SOME REASON he doesn’t clear it, HE JUST  DOES THE CAPTCHAS!" with vpunch
     hide hanami_speak
     show kousuke_speak
-    ks "You seem upset, but I can identify sailboats in a matter of seconds, I think you’re just jealous."
+    ks "You seem upset, but I can identify sailboats in a matter of seconds. I think you’re just jealous."
     hide kousuke_speak
     show hanami_speak
     ph "..."
@@ -66,10 +66,10 @@ label ph_date:
     show hanami_speak
     with easeintop
 
-    mc "So… do you play this game often?"
-    ph "Yeah I have like 2000 hours."
+    mc "So…do you play this game often?"
+    ph "Yeah I have like 2,000 hours."
     ph "Where we droppin boys?"
-    mc "Uhh, I don’t know how to play this game, you pick."
+    mc "Uhh, I don’t know how to play this game. You pick."
     ph "I can land anywhere, it doesn’t matter to me."
     mc "We are literally about to hit the ground."
     ph "Where the fuck are you going Kousuke?"
@@ -83,14 +83,14 @@ label ph_date:
     ph "Volcano."
     hide hanami_speak
     show kousuke_speak
-    ks "It’s alright, this thing is saying I can mint VBucks to respawn!"
+    ks "It’s alright. This thing is saying I can mint VBucks to respawn!"
 
     scene bg fortnite
     with dissolve
     show hanami_speak
     with easeintop
 
-    ph "Okay, you, grab guns in that house!"
+    ph "Okay, you. Grab guns in that house!"
     mc "I can’t find anything!"
     sy "*Footsteps nearby*"
     mc "Shit! Hanami HELP!" with vpunch

@@ -297,7 +297,7 @@ label sh_date_4:
     #[EXTRASMUG]
     hide shizuha_neutral
     show shizuha_extrasmug at st_intro_two
-    sh "Well the stream’s over now and there’s no more secrets. How about we just play some Choke Slam now?"
+    sh "Well the stream’s over now and there’s no more secrets. How about we just play some {i}Choke Slam{/i} now?"
     mc "We’re talking about the game right?"
 
     #[SMUG, SLOW ZOOM FACE]

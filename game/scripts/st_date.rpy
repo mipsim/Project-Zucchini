@@ -10,7 +10,6 @@ label st_date:
     "They should be arriving any second no-"
     mc "OW!"
 
-    play music "audio/yoshi.mp3" fadein 2.0
     scene bg beach
     with dissolve
     show stone base

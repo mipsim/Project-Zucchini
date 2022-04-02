@@ -77,7 +77,7 @@ label end_game_mark:
 
     mz "Well, it looks like we finally got rid-"
     mz "I mean, reorganized your friend group."
-    mc "Your find my friend is bullshit."
+    mc "Your Find My Friend is bullshit."
     mc "I met most of those friends online, how am I supposed to know their full names?"
     mc "Not just that, those questions were impossible, totally not fair at all."
     mz "Now now, it’s a simple matter of finding the people you really care about."

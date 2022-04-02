@@ -95,7 +95,7 @@ label hub_1:
     hide shizuha_surprised
     show shizuha_neutral at sh_intro_two
     st "stop."
-    mc "umm... no thank you mark, we'd really just like to be left alone for now."
+    mc "Umm... no thank you mark, we'd really just like to be left alone for now."
     mz "You have selected the \"All Alone\" entertainment package."
     mz "I will now split you off for a date with that \"Special Someone\"."
     
