@@ -3,13 +3,15 @@ label ph_date:
     with dissolve
 
     sy "*Discord call received*"
-    ph "Hey hey join this server, and add me on Fortnite, Xx_BunnyPunter_69 okay?"
+    ph "Hey hey join this server, and add me on Fortnite, {i}Xx_BunnyPunter_69{/i} okay?"
     sy "AR notifications stream onto your HUD, the last being a game invite"
 
     scene bg select
+    with dissolve
     play music "audio/fokehs.mp3" fadein 2.0
     show hanami_speak
     with easeinright
+
     ph "*Splashing*"
     who "Ohayo darlings it’s your favorite Miko Mommy!"
     ph "Sorry thats my fucking streamer roommate, where is-"
@@ -60,11 +62,15 @@ label ph_date:
     show hanami_speak
     ph "..."
     sy "Kousuke's avatar appears and the matchmaking symbol instantly ignites."
+    
+    stop music fadeout 1.0
    
     scene bg dropping
     with dissolve
     show hanami_speak
-    with easeintop
+    with easeinright
+
+    play music "audio/shizuhafight.mp3" fadein 2.0
 
     mc "So…do you play this game often?"
     ph "Yeah I have like 2,000 hours."
@@ -79,6 +85,7 @@ label ph_date:
     hide kousuke_speak
     show hanami_speak
     ph "KOUSUKE THATS A-" with vpunch
+    play sound "audio/sizzle.ogg"
     sy "*Kousuke tried to swim in lava*"
     ph "Volcano."
     hide hanami_speak
@@ -88,15 +95,15 @@ label ph_date:
     scene bg fortnite
     with dissolve
     show hanami_speak
-    with easeintop
+    with easeinright
 
     ph "Okay, you. Grab guns in that house!"
     mc "I can’t find anything!"
     sy "*Footsteps nearby*"
     mc "Shit! Hanami HELP!" with vpunch
     ph "Get down!!" with vpunch
-    sy "Xx_BunnyPunter_69 downed xXEveningCapeXx"
-    sy "xXEveningCapeXx left the game"
+    sy "{i}Xx_BunnyPunter_69{/i} downed {i}xXEveningCapeXx{/i}"
+    sy "{i}xXEveningCapeXx{/i} left the game"
     mc "Shut up! Drink this chug jug!"
     hide hanami_speak
     show kousuke_speak
@@ -105,15 +112,15 @@ label ph_date:
     hide kousuke_speak
     show hanami_speak
     ph "FU-" with hpunch
-    sy "Groovy-Bot downed Xx_BunnyPunter_69"
-    sy "Groovy-Bot downed ShizuhaSimp"
+    sy "{i}Groovy-Bot{/i} downed {i}Xx_BunnyPunter_69{/i}"
+    sy "{i}Groovy-Bot{/i} downed {i}ShizuhaSimp{/i}"
     hide hanami_speak
     show kousuke_speak
     ks "I’m running to you!"
     hide kousuke_speak
     show hanami_speak
     ph "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW I’M DOWN" with vpunch
-    sy "Groovy-Bot downed jojusoju"
+    sy "{i}Groovy-Bot{/i} downed {i}jojusoju{/i}"
     hide hanami_speak
     show kousuke_speak
     ks "What happened, I’m crawling on the floor?"
@@ -121,7 +128,7 @@ label ph_date:
     show hanami_speak
     ph "Ugh, how are there even cheaters in this game???"
     mc "It was nice playing with you Hanami-"
-    sy "Xx_BunnyPunter_69 left the game"
+    sy "{i}Xx_BunnyPunter_69{/i} left the game"
     mc "Oh, ok"
 
     stop music fadeout 1.0

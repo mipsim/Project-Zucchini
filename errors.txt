@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 4: expected statement.
-    renpy.pause(delay = 20.0, hard=False)
-                                         ^
-
-File "game/script.rpy", line 6: expected statement.
-    renpy.pause(delay = 20.0, hard=False)
-                                         ^
+File "game/scripts/ph_date.rpy", line 71: expected simple expression
+    play music "audio/outoftheparkyo.mp3" fadein
+                                                ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat Apr  2 00:58:09 2022
+Sat Apr  2 15:45:12 2022

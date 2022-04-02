@@ -6,7 +6,7 @@ label start:
 menu choose_date_1:
     mz "Please choose who you want to go on a date with."
 
-    "Play fortnite with Punished Hanami":
+    "Play Fortnite with Punished Hanami":
         jump date_hanami
 
     "Go to the hot tub with Shizuha Kibashi":
@@ -119,7 +119,7 @@ label zucc_return:
 menu choose_date_2:
     mz "Would you like to go on another date, or find a friend?"
 
-    "Play fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
+    "Play Fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
         jump date_hanami
     
     "Go to the hot tub with Shizuha Kibashi" if sh_missing != True and sh_date != True:
