@@ -2,6 +2,7 @@
 define mc = Character("You", color ="#33A9FF")
 define mz = Character("Mark Zucchiniberg", color ="#149E55")
 define sy = Character("System", color ="#149E55")
+define pl = Character("Plaza", color ="#3B5998")
 define ph = Character("Punished Hanami", color ="#EF7587")
 define st = Character("Stone", color ="#7E7E7E")
 define sh = Character("Shizuha", color ="#D03A9A")
@@ -15,6 +16,7 @@ default st_date = False
 default st_missing = False
 default sh_date = False
 default sh_missing = False
+default plaza = False
 
 # Animation
 transform ph_intro_one:

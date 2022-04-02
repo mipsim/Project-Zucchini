@@ -88,13 +88,13 @@ menu test_hanami:
     "Q: How many traffic lights are in this picture?"
 
     "A: 0":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "B: 7":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "C: 6":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "D: 2 fuckin many":
         "Correct!"
@@ -105,16 +105,16 @@ menu test_shizuha:
     "Q: Who is their favorite tier 3 sub?"
 
     "A: shizuhasimp":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "B: basebussy":
         "Correct!"
         jump found_shizuha
     "C: eveningcape":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "D: grainy":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     
 menu test_stone:
@@ -124,13 +124,13 @@ menu test_stone:
         "Correct!"
         jump found_stone
     "B: Pop":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "C: Orchestral":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "D: Shinto-era":
-        "We're sorry, but that was incorrect."
+        "We're sorry, but that was incorrect." with hpunch
         jump after_search
 
 label found_hanami:
