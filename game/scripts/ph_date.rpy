@@ -1,10 +1,128 @@
 label ph_date:
+    scene bg black
+    with dissolve
+
+    sy "Discord call sound plays"
+    ph "hey hey join this server, and add me on Fortnite, Xx_BunnyPunter_69 okay?"
+    sy "AR notifications stream onto your HUD, the last being a game invite"
+
+    scene bg select
+    play music "audio/fokehs.mp3" fadein 2.0
+    show hanami_speak
+    with easeinright
+    ph "*splashing*"
+    who "Ohayo darlings it’s your favorite Miko Mommy!"
+    ph "Sorry thats my fucking streamer roommate, where is-"
+    sy "*Discord call join*"
+    hide hanami_speak
+    show kousuke_speak
+    ks "Hellooo ??"
+    hide kousuke_speak
+    show hanami_speak
+    ph "Yeah Kousuke we can hear you."
+    hide hanami_speak
+    show kousuke_speak
+    ks "Hello, guys?"
+    hide kousuke_speak
+    show hanami_speak
+    ph "YES!! WE CAN-" with vpunch
+    hide hanami_speak
+    show kousuke_speak
+    ks "I can’t hear, hold-"
+    sy "*discord call leave*"
+    hide kousuke_speak
+    show hanami_speak
+    ph "Oh my god."
+    mc "Is he okay?"
+    ph "Not really, the technological revolution hit him pretty hard."
+    ph "He hasn’t been the same ever since mom sold the family shrine to a memecoin stock exchange."
+    ph "They bulldozed it to build a datacenter."
+    sy "*Discord call join*"
+    hide hanami_speak
+    show kousuke_speak
+    ks "Okay everyone, I re-plugged in my mic."
+    hide kousuke_speak
+    show hanami_speak
+    ph "Yeah good, you figured out technology."
+    ph "JOIN THE GAME ALREADY!" with vpunch
+    hide hanami_speak
+    show kousuke_speak
+    ks "Hang on!! There’s popups. Which ones of these are traffic lights…"
+    hide kousuke_speak
+    show hanami_speak
+    ph "Jesus christ, somebody installed an ”I am human” virus on his setup."
+    ph "Everytime some bot needs to pass off as human it routes the captcha to his screen."
+    ph "And for SOME REASON he doesn’t clear it, HE JUST  DOES THE CAPTCHAS!" with vpunch
+    hide hanami_speak
+    show kousuke_speak
+    ks "You seem upset, but I can identify sailboats in a matter of seconds, I think you’re just jealous."
+    hide kousuke_speak
+    show hanami_speak
+    ph "..."
+    sy "Kousuke's avatar appears and the matchmaking symbol instantly ignites."
+   
     scene bg dropping
     with dissolve
-    show hanami base
-    with easeinright
+    show hanami_speak
+    with easeintop
 
-    "Hanami date"
+    mc "So… do you play this game often?"
+    ph "Yeah I have like 2000 hours."
+    ph "Where we droppin boys?"
+    mc "Uhh, I don’t know how to play this game, you pick."
+    ph "I can land anywhere, it doesn’t matter to me."
+    mc "We are literally about to hit the ground."
+    ph "Where the fuck are you going Kousuke?"
+    hide hanami_speak
+    show kousuke_speak
+    ks "To the mountains, where I can be alone…"
+    hide kousuke_speak
+    show hanami_speak
+    ph "KOUSUKE THATS A-" with vpunch
+    sy "*Kousuke tried to swim in lava*"
+    ph "Volcano."
+    hide hanami_speak
+    show kousuke_speak
+    ks "It’s alright, this thing is saying I can mint VBucks to respawn!"
+
+    scene bg fortnite
+    with dissolve
+    show hanami_speak
+    with easeintop
+
+    ph "Okay, you, grab guns in that house!"
+    mc "I can’t find anything!"
+    sy "*Footsteps nearby*"
+    mc "Shit! Hanami HELP!" with vpunch
+    ph "Get down!!" with vpunch
+    sy "Xx_BunnyPunter_69 downed xXEveningCapeXx"
+    sy "xXEveningCapeXx left the game"
+    mc "Shut up! Drink this chug jug!"
+    hide hanami_speak
+    show kousuke_speak
+    ks "I’m almost back from the gulag everyone!"
+    mc "Why is that one spinning?"
+    hide kousuke_speak
+    show hanami_speak
+    ph "FU-" with hpunch
+    sy "Groovy-Bot downed Xx_BunnyPunter_69"
+    sy "Groovy-Bot downed ShizuhaSimp"
+    hide hanami_speak
+    show kousuke_speak
+    ks "I’m running to you!"
+    hide kousuke_speak
+    show hanami_speak
+    ph "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW I’M DOWN" with vpunch
+    sy "Groovy-Bot downed jojusoju"
+    hide hanami_speak
+    show kousuke_speak
+    ks "What happened, I’m crawling on the floor?"
+    hide kousuke_speak
+    show hanami_speak
+    ph "Ugh, how are there even cheaters in this game???"
+    mc "It was nice playing with you Hanami-"
+    sy "Xx_BunnyPunter_69 left the game"
+    mc "Oh, ok"
 
     stop music fadeout 1.0
     play music "audio/zucchini.mp3" fadein 2.0

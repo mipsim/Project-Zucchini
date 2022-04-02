@@ -19,7 +19,6 @@ label date_hanami:
     $ sh_missing = True
 
     stop music fadeout 1.0
-    play music "audio/chugjug.mp3" fadein 2.0
     jump ph_date
 
 label date_shizuha:

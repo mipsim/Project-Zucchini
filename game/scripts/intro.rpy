@@ -1,5 +1,5 @@
 label intro:
-    scene bg select
+    scene bg black
     with dissolve
 
     show zuck base

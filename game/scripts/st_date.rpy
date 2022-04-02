@@ -11,7 +11,7 @@ label st_date:
     mc "OW!"
 
     show stone base
-    with easeinright
+    with easeintop
     
     "Ugh…my head…What was that?"
     "Actually, how am I even feeling pain here?"

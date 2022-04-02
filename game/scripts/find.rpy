@@ -16,7 +16,7 @@ label find_my_friend:
 
         play sound "audio/friendfound.mp3"
 
-        st "Yo! I'm not in the Spirit Realm anym-"
+        ph "Yo! I'm not in the Spirit Realm anym-"
         hide hanami base
         with easeoutleft
 
