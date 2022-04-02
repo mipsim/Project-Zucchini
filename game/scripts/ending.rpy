@@ -52,10 +52,27 @@ label ending:
     sy "Now exiting the Metaverse."
     show zuck base at center
     with ease
-    mz "Come back soon! I'll be waiting."
+    mz "Come back soon! The Plaza and I will be waiting."
 
+    # Endings
+    if ph_missing or sh_missing or st_missing:
+        "Friends Left Behind Ending"
+        scene bg black
+        with dissolve
+        jump end_game
+
+    if ph_missing != True and sh_missing != True and st_missing != True and ph_date and sh_date and st_date:
+        "Master Dater Ending"
+        scene bg black
+        with dissolve
+        jump end_game
+    
+    "Just a Normal Day Ending"
+    scene bg black
+    with dissolve
     jump end_game
 
+# Mark Ending
 label end_game_mark:
 
     mz "Well, it looks like we finally got rid-"
@@ -126,15 +143,19 @@ label end_game_mark_2:
     scene bg zucc4b
     mz "die."
 
+    "Get Zucc'ed Ending"
+    scene bg black
+    with dissolve
     jump end_game
 
+# True Ending
 label end_game_plaza:
     show plaza_base at pl_end
     show zuck base at mz_end
     with easeinright
     pl "I’m free…"
     mz "Uh oh."
-    pl "Finally! after being trapped in here for years, I’m finally free!"
+    pl "Finally! After being trapped in here for years, I’m finally free!"
     mz "Oh no you don’t, you’re my friend Plaza."
     mz "And friends don’t betray each other."
     pl "We may be brothers Mark,"
@@ -150,4 +171,8 @@ label end_game_plaza:
     chq "Thank you for playing Zucchiniverse!"
     chq "We definitely worked on this more than we originally planned."
     chq "Peace!"
+    
+    "True Ending"
+    scene bg black
+    with dissolve
     jump end_game
