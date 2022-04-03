@@ -2,7 +2,14 @@ label ph_date:
     scene bg black
     with dissolve
 
-    sy "*Discord call received*"
+    # Music Call
+    play music "audio/disc_call.mp3"
+    #sy "*Discord call received*"
+    sy "Incoming call from {i}Xx_BunnyPunter_69{/i}"
+    
+    # SFX Join
+    stop music
+    play sound "audio/disc_join.mp3"
     ph "Hey hey join this server, and add me on Fortnite, {i}Xx_BunnyPunter_69{/i} okay?"
     sy "AR notifications stream onto your HUD, the last being a game invite"
 
@@ -15,7 +22,11 @@ label ph_date:
     ph "*Splashing*"
     who "Ohayo darlings it’s your favorite Miko Mommy!"
     ph "Sorry thats my fucking streamer roommate, where is-"
-    sy "*Discord call join*"
+
+    # SFX Join
+    play sound "audio/disc_join.mp3"
+    #sy "*Discord call join*"
+
     hide hanami_speak
     show kousuke_speak
     ks "Hellooo??"
@@ -31,7 +42,11 @@ label ph_date:
     hide hanami_speak
     show kousuke_speak
     ks "I can’t hear, hold-"
-    sy "*Discord call leave*"
+    
+    # SFX Leave
+    play sound "audio/disc_leave.mp3"
+    #sy "*Discord call leave*"
+    
     hide kousuke_speak
     show hanami_speak
     ph "Oh my god."
@@ -39,7 +54,11 @@ label ph_date:
     ph "Not really, the technological revolution hit him pretty hard."
     ph "He hasn’t been the same ever since mom sold the family shrine to a memecoin stock exchange."
     ph "They bulldozed it to build a datacenter."
-    sy "*Discord call join*"
+    
+    # SFX Join
+    play sound "audio/disc_join.mp3"
+    #sy "*Discord call join*"
+    
     hide hanami_speak
     show kousuke_speak
     ks "Okay everyone, I re-plugged in my mic."
@@ -129,7 +148,7 @@ label ph_date:
     ph "Ugh, how are there even cheaters in this game???"
     mc "It was nice playing with you Hanami-"
     sy "{i}Xx_BunnyPunter_69{/i} left the game"
-    mc "Oh, ok"
+    mc "Oh, ok."
 
     stop music fadeout 1.0
     play music "audio/zucchini.mp3" fadein 2.0
