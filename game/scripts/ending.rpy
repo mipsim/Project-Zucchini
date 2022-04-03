@@ -56,6 +56,7 @@ label ending:
 
     # Endings
     if ph_missing or sh_missing or st_missing:
+        mz "But your missing friends won't."
         "Friends Left Behind Ending"
         scene bg black
         with dissolve
