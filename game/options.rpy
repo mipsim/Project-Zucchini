@@ -23,13 +23,34 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "v4.1.22"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+    Visual Novel developed by Chonkers HQ
+
+    Eli Miller - Creative Lead, Narrative
+
+    Michael Sim - Programming, Production
+
+    Angela Do - Character Art
+
+    Annie Zhang - Prop Art
+
+    Kat Gee - Background Illustration Art
+
+    Anfernee Lai - Sh1zuha Narrative
+
+    Avery Weibel - Punished Hanami Narrative
+
+    Joseph Wang - Stone Narrative
+
+    Weston Cook - *True Ending*
+    
+    Special Thanks - Andrew Xu, Victor Dong,  Sandy Sang, Angela Jiang
 """)
 
 
@@ -62,7 +83,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/facingthemusic.ogg"
 
 
 ## Transitions #################################################################

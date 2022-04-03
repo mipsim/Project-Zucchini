@@ -1,11 +1,12 @@
 ﻿# Start
 label start:
+    stop music fadeout 1.0
     jump intro
 
 menu choose_date_1:
     mz "Please choose who you want to go on a date with."
 
-    "Play fortnite with Punished Hanami":
+    "Play Fortnite with Punished Hanami":
         jump date_hanami
 
     "Go to the hot tub with Shizuha Kibashi":
@@ -19,7 +20,6 @@ label date_hanami:
     $ sh_missing = True
 
     stop music fadeout 1.0
-    play music "audio/chugjug.mp3" fadein 2.0
     jump ph_date
 
 label date_shizuha:
@@ -27,7 +27,6 @@ label date_shizuha:
     $ st_missing = True
 
     stop music fadeout 1.0
-    play music "audio/batterup.mp3" fadein 2.0
     jump sh_date
 
 label date_stone:
@@ -35,20 +34,26 @@ label date_stone:
     $ ph_missing = True
 
     stop music fadeout 1.0
-    play music "audio/yoshi.mp3" fadein 2.0
     jump st_date
 
 label hub_2:
     scene bg warped
     with dissolve
 
+    play music "audio/zucchini.mp3" fadein 2.0
+
     if ph_missing != True:
         show hanami base at ph_intro_three
     if sh_missing != True:
-        show shizuha base at sh_intro_two
+        show shizuha_neutral at sh_intro_two
     if st_missing != True:
         show stone base at st_intro_three
     with easeinright
+
+    if ph_missing and sh_missing and st_missing:
+        "That's weird. Now everyone's gone."
+        "I should probably talk to Mark."
+        jump zucc_return
 
     if ph_missing and sh_missing:
         st "Where do you think the other two went?"
@@ -114,7 +119,7 @@ label zucc_return:
 menu choose_date_2:
     mz "Would you like to go on another date, or find a friend?"
 
-    "Play fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
+    "Play Fortnite with Punished Hanami" if ph_missing != True and ph_date != True:
         jump date_hanami
     
     "Go to the hot tub with Shizuha Kibashi" if sh_missing != True and sh_date != True:
@@ -123,11 +128,29 @@ menu choose_date_2:
     "Hang out with Stone" if st_missing != True and st_date != True:
         jump date_stone
 
+    "Chill for a bit" if ph_missing != True or sh_missing != True or st_missing != True:
+        scene bg black
+        with dissolve
+        
+        mc "Well, might as well pass some time."
+
+        if ph_missing != True:
+            $ ph_missing = True
+            jump hub_2
+        elif sh_missing != True:
+            $ sh_missing = True
+            jump hub_2
+        elif st_missing != True:
+            $ st_missing = True
+            jump hub_2
+
+        jump hub_2
+
     "Find My Friend":
         if ph_missing != True:
             hide hanami base
         if sh_missing != True:
-            hide shizuha base
+            hide shizuha_neutral
         if st_missing != True:
             hide stone base
         with easeoutleft
@@ -138,7 +161,10 @@ menu choose_date_2:
         jump find_my_friend
 
     "Enough of the dates!":
-        jump end_game
+        jump ending
 
 label end_game:
+    scene bg black
+    with dissolve
+
     return

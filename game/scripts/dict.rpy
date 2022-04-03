@@ -1,10 +1,14 @@
 # Characters
-define mc = Character("You")
-define mz = Character("Mark Zucchiniberg")
-define ph = Character("Punished Hanami")
-define st = Character("Stone")
-define sh = Character("Shizuha")
-define who = Character("???")
+define mc = Character("You", color ="#33A9FF")
+define mz = Character("Mark Zucchiniberg", color ="#149E55")
+define sy = Character("System", color ="#149E55")
+define pl = Character("Plaza", color ="#3B5998")
+define ph = Character("Punished Hanami", color ="#EF7587")
+define st = Character("Stone", color ="#7E7E7E")
+define sh = Character("Shizuha", color ="#D03A9A")
+define who = Character("???", color ="#F19EAA")
+define ks = Character("Kousuke", color ="#E67412")
+define chq = Character("CHQ", color ="#EF7587")
 
 # Variables
 default ph_date = False
@@ -13,6 +17,11 @@ default st_date = False
 default st_missing = False
 default sh_date = False
 default sh_missing = False
+default pl_found = False
+
+# Video
+image ending_vid = Movie(size=(1280,720), channel="movie", play="video/ending.webm", loop=False)
+
 
 # Animation
 transform ph_intro_one:
@@ -41,3 +50,17 @@ transform sh_intro_two:
 
 transform mz_intro_two:
     xalign 0.1
+
+transform mz_end:
+    xalign 0.3
+
+transform pl_end:
+    xalign 0.7
+
+transform tran_bouquet:
+    xalign 0.5
+    yalign 0.5
+
+transform tran_captcha:
+    xalign 0.1
+    yalign 0.5

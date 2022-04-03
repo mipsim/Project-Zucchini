@@ -1,11 +1,11 @@
 label intro:
-    scene bg select
+    scene bg black
     with dissolve
 
     show zuck base
     with easeinbottom
     
-    play music "audio/zucchini.mp3" fadein 2.0
+    play music "audio/zucchini.mp3"
     
     mz "Hi, I’m Mark Zucchini-berg."
     mz "Welcome to the {i}Metaverse{i}!"
@@ -69,7 +69,7 @@ label hub_1:
 
     show hanami base at ph_intro_two
     show stone base at st_intro_two
-    show shizuha base at sh_intro_one
+    show shizuha_mad at sh_intro_one
     with easeinright
 
     sh "Yeah, the ID system to get in this game is pretty strict."
@@ -77,19 +77,25 @@ label hub_1:
 
     ph "Well, now that we're all here, what should we do?"
 
-    show shizuha base at sh_intro_two
+    show shizuha_mad at sh_intro_two
     show hanami base at ph_intro_three
     show stone base at st_intro_three
     show zuck base at mz_intro_two
     with easeinleft
+    hide shizuha_mad
+    show shizuha_neutral at sh_intro_two
 
     mz "Did someone just ask for a tour of our Metaverse featureset?"
     ph "Ummm... no I think we're ok."
     mz "If you would like to stop the feature tour, please say \"STOP\" or another action you would li-"
     ph "STOP!" with hpunch
+    hide shizuha_neutral
+    show shizuha_surprised at sh_intro_two
     sh "STO;P" with hpunch
+    hide shizuha_surprised
+    show shizuha_neutral at sh_intro_two
     st "stop."
-    mc "umm... no thank you mark, we'd really just like to be left alone for now."
+    mc "Umm... no thank you mark, we'd really just like to be left alone for now."
     mz "You have selected the \"All Alone\" entertainment package."
     mz "I will now split you off for a date with that \"Special Someone\"."
     

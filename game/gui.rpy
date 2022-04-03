@@ -23,14 +23,14 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = u'#66cc00'
+define gui.accent_color = u'#4D9B00'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = u'#888888'
+define gui.idle_color = u'#CFE0C2'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = u'#aaaaaa'
+define gui.idle_small_color = u'464646'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = u'#a3e066'
@@ -48,26 +48,26 @@ define gui.muted_color = u'#285100'
 define gui.hover_muted_color = u'#3d7a00'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = u'#ffffff'
+define gui.text_color = u'#000000'
 define gui.interface_text_color = u'#ffffff'
 
 
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "gui/Barlow-Regular.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "gui/Barlow-Medium.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "gui/Barlow-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 24
 
 ## The size of character names.
-define gui.name_text_size = 30
+define gui.name_text_size = 26
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 22
@@ -101,24 +101,23 @@ define gui.textbox_height = 185
 ## center, and 1.0 is the bottom.
 define gui.textbox_yalign = 1.0
 
-
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 240
-define gui.name_ypos = 0
+define gui.name_xpos = 365
+define gui.name_ypos = -17
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.5
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = None
-define gui.namebox_height = None
+define gui.namebox_width = 300
+define gui.namebox_height = 45
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(5, 16, 5, 5)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
@@ -128,7 +127,7 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 268
+define gui.dialogue_xpos = 240
 define gui.dialogue_ypos = 50
 
 ## The maximum width of dialogue text, in pixels.
@@ -186,7 +185,7 @@ define gui.confirm_button_text_xalign = 0.5
 
 define gui.page_button_borders = Borders(10, 4, 10, 4)
 
-define gui.quick_button_borders = Borders(10, 4, 10, 0)
+define gui.quick_button_borders = Borders(10, 4, 10, 12)
 define gui.quick_button_text_size = 14
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color

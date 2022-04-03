@@ -2,29 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/ph_date.rpy", line 8: expected end of line
-    stop music "audio/zucchini.mp3" fadeout 1.0
-               ^
-
-File "game/scripts/ph_date.rpy", line 13: expected end of line
-    stop music "audio/chugjug.mp3" fadeout 1.0
-               ^
-
-File "game/scripts/sh_date.rpy", line 7: expected end of line
-    stop music "audio/zucchini.mp3" fadeout 1.0
-               ^
-
-File "game/scripts/sh_date.rpy", line 12: expected end of line
-    stop music "audio/batterup.mp3" fadeout 1.0
-               ^
-
-File "game/scripts/st_date.rpy", line 8: expected end of line
-    stop music "audio/zucchini.mp3" fadeout 1.0
-               ^
-
-File "game/scripts/st_date.rpy", line 13: expected end of line
-    stop music "audio/yoshi.mp3" fadeout 1.0
-               ^
+File "game/scripts/ph_date.rpy", line 71: expected simple expression
+    play music "audio/outoftheparkyo.mp3" fadein
+                                                ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Thu Mar 31 20:58:34 2022
+Sat Apr  2 15:45:12 2022
