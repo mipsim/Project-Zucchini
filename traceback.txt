@@ -1,46 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/ph_date.rpy", line 32, in script
-    ks "Hellooo??"
-IOError: Couldn't find file 'audio/disc_join'.
+  File "game/scripts/sh_date.rpy", line 88, in script
+    with none
+  File "game/scripts/sh_date.rpy", line 88, in <module>
+    with none
+NameError: name 'none' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/ph_date.rpy", line 32, in script
-    ks "Hellooo??"
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1419, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1249, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 901, in do_display
-    **display_args)
-  File "renpy/character.py", line 647, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 4025, in interact_core
-    renpy.audio.audio.periodic()
-  File "renpy/audio/audio.py", line 1162, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
-    periodic_pass()
-  File "renpy/audio/audio.py", line 1082, in periodic_pass
-    c.periodic()
-  File "renpy/audio/audio.py", line 518, in periodic
-    topf = load(filename)
-  File "renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/disc_join'.
+  File "game/scripts/sh_date.rpy", line 88, in script
+    with none
+  File "renpy/ast.py", line 1436, in execute
+    trans = renpy.python.py_eval(self.expr)
+  File "renpy/python.py", line 2276, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2269, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/sh_date.rpy", line 88, in <module>
+    with none
+NameError: name 'none' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Zucchiniverse v4.1.22
-Sat Apr  2 17:04:27 2022
+Sun Apr  3 19:54:02 2022
