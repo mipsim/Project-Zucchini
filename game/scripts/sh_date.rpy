@@ -85,9 +85,12 @@ menu sh_choice_1:
     "Send an emote":
         hide streamoverlay5
         show streamoverlay6
+        with None
         show beachuangy
+        with easeintop
         mc "{i}shizuhasimp{/i}: *spawn beachuAngy emote*"
         hide beachuangy
+        with easeoutbottom
         jump sh_date_2
 
 label sh_date_2:
@@ -134,7 +137,7 @@ label sh_date_2:
     "Damn him she was just about to say my name on stream!" with vpunch
 
     #[NEUTRAL SPRITE]
-    hide shizuha_surpsied
+    hide shizuha_surprised
     show shizuha_happy at st_intro_two
     hide streamoverlay13
     show streamoverlay14
@@ -161,29 +164,36 @@ label sh_date_2:
     "Wait that’s me!"
 
     #[HAPPY SPRITE]
-    hide shizuha_neutral
+    hide shizuha_surprised
     show shizuha_happy
     sh "We had our first 50 billion point redemption last night, which means we’re having a hot tub date stream!"
 
     play sound "audio/streamstart.mp3"
-    "You see a ping pop up on your HUD. It’s an invite to her Meta Space™! No cap no kizzy on god no way you decline this!"
+    "You see a ping pop up on your HUD. It’s an invite to her Meta Space™! No cap, no kizzy, on god no way you decline this!"
     jump sh_choice_2
 
 menu sh_choice_2:
     "What should I do?"
 
     "Decline?":
-        sy "Date failed. Returning to plaza."
-        jump end_game
+        hide shizuha_happy
+        show shizuha_surprised
+        sh "Oh? Okay then."
+        sh "Guess someone else can join me in the hot tub then."
+        sh "See ya loser."
+        sy "Date failed. Returning to Plaza."
+        $ sh_date = False
+        $ st_missing = False
+        jump end_sh_date
 
     "Accept of course!":
         jump sh_date_3
 
 label sh_date_3:
-    mc "This is so exciting I’ve never been in a girl’s Meta Space™ before!"
+    mc "This is so exciting, I’ve never been in a girl’s Meta Space™ before!"
 
     #[SMUG SPRITE]
-    hide shizuha_neutral
+    hide shizuha_happy
     show shizuha_smug
     sh "Aha of course not, you nerd loser."
     mc "Wait what did you just say?"
@@ -195,15 +205,15 @@ label sh_date_3:
     "Oh that must have just been background noise. That’s so silly of me."
     hide shizuha_happy
     show shizuha_surprised
-    sh "Oh wow is that 5 star Gucci fanny pack on your avatar???"
-    "Fuck yeah I knew it was worth swiping for 30 rolls on the Gucciverse collab."
+    sh "Oh wow is that a 5 star Gucci fanny pack on your avatar???"
+    "Fuck yeah, I knew it was worth swiping for 30 rolls on the Gucciverse collab."
     mc "Yeah! Isn’t it cool? I think the devs only released like 3 of these!"
 
     #[NEUTRAL SPRITE]
     hide shizuha_surprised
     show shizuha_neutral
     "Her eyes shifted into a sudden squint, boring holes through my avatar."
-    sh "Oh! That’s very… nice! That’s a weird coincidence. I think one of my friends has the same bag."
+    sh "Oh! That’s very...nice! That’s a weird coincidence. I think one of my friends has the same bag."
     "Weird. I thought this’d be her first time gazing upon one of these babies."
     hide shizuha_neutral
     show shizuha_smug
@@ -244,7 +254,7 @@ label sh_date_3:
     #[SURPRISE]
     hide shizuha_smug
     show shizuha_surprised at st_intro_two
-    who "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW IM DOWN" with vpunch
+    who "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW IM DOWN!" with vpunch
     mc "What was that??"
 
     hide shizuha_surprised
@@ -271,7 +281,7 @@ label sh_date_3:
     hide shizuha base
     scene bg black
 
-    "Oh crap did I get disconnected?!"
+    "Shit, did I get disconnected?"
     mc "Hello?"
 
     #[FADE IN FROM BLACK]
@@ -281,15 +291,15 @@ label sh_date_3:
 
     #[REPLACE SPRITE WITH NORMAL IMAGE, NOT VTUBER]
     show shizuha base at st_intro_two
-    sh "Whoops looks like my internet died for a second there"
+    sh "Whoops, looks like my internet died for a second there."
 
     #[BRING BACK VTUBER, SURPRISE SPRITE]
     hide shizuha base
     show shizuha_surprised at st_intro_two
 
     play music "audio/giantmiko.mp3" fadein 2.0
-    sh "AH–"
-    mc "Wait, no way! Your avatar…"
+    sh "AH–" with vpunch
+    mc "Wait, no way! Your avatar..."
 
     jump sh_choice_3
 
@@ -297,8 +307,15 @@ menu sh_choice_3:
     "What should I do?"
 
     "It’s so kind of you to share your avatar with your fans!":
-        sy "Date failed. Returning to plaza."
-        jump end_game
+        hide shizuha_surprised
+        show shizuha_sad at st_intro_two
+        sh "I have no idea what you're talking about."
+        sh "But, I do know that the hot tub date stream is now officially over."
+        sh "Feel free to get out of here immediately."
+        sy "Date failed. Returning to Plaza."
+        $ sh_date = False
+        $ st_missing = False
+        jump end_sh_date
 
     "You must be my friend Sh1zuha!":
         jump sh_date_4
@@ -334,11 +351,12 @@ label sh_date_4:
         ease 0.5 zoom 2.0
 
     #[SLOW FADE TO BLACK]
+    jump end_sh_date
+
+label end_sh_date:
     scene bg black
     with dissolve
 
     stop music fadeout 1.0
-    jump end_sh_date
 
-label end_sh_date:
     jump hub_2

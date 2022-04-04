@@ -10,18 +10,19 @@ label ph_date:
     # SFX Join
     stop music
     play sound "audio/disc_join.mp3"
-    ph "Hey hey join this server, and add me on Fortnite, {i}Xx_BunnyPunter_69{/i} okay?"
+    ph "Hey hey join this server. And add me on Fortnite, {i}Xx_BunnyPunter_69{/i} okay?"
     sy "AR notifications stream onto your HUD, the last being a game invite"
 
     scene bg select
     with dissolve
     play music "audio/fokehs.mp3" fadein 2.0
+    
+    who "*splashing*"
+    who "Ohayo darlings it's your favorite miko mommy!"
+    
     show hanami_speak
     with easeinright
-
-    ph "*Splashing*"
-    who "Ohayo darlings it’s your favorite Miko Mommy!"
-    ph "Sorry thats my fucking streamer roommate, where is-"
+    ph "Sorry, thats my fucking streamer roommate. Where is-"
 
     # SFX Join
     play sound "audio/disc_join.mp3"
@@ -65,10 +66,15 @@ label ph_date:
     hide kousuke_speak
     show hanami_speak
     ph "Yeah good, you figured out technology."
-    ph "JOIN THE GAME ALREADY!" with vpunch
     hide hanami_speak
     show kousuke_speak
-    ks "Hang on!! There’s popups. Which ones of these are traffic lights…"
+    ks "Hanami, who is this...{i}shizuhasim-{/i}"
+    hide kousuke_speak
+    show hanami_speak
+    ph "THEY'RE MY FRIEND JUST JOIN THE GAME ALREADY!" with vpunch
+    hide hanami_speak
+    show kousuke_speak
+    ks "Hang on!! There’s popups. Which ones of these are traffic lights..."
     hide kousuke_speak
     show hanami_speak
     ph "Jesus christ, somebody installed an ”I am human” virus on his setup."
@@ -91,7 +97,7 @@ label ph_date:
 
     play music "audio/shizuhafight.mp3" fadein 2.0
 
-    mc "So…do you play this game often?"
+    mc "So...do you play this game often?"
     ph "Yeah I have like 2,000 hours."
     ph "Where we droppin boys?"
     mc "Uhh, I don’t know how to play this game. You pick."
@@ -100,7 +106,7 @@ label ph_date:
     ph "Where the fuck are you going Kousuke?"
     hide hanami_speak
     show kousuke_speak
-    ks "To the mountains, where I can be alone…"
+    ks "To the mountains, where I can be alone..."
     hide kousuke_speak
     show hanami_speak
     ph "KOUSUKE THATS A-" with vpunch
@@ -109,7 +115,7 @@ label ph_date:
     ph "Volcano."
     hide hanami_speak
     show kousuke_speak
-    ks "It’s alright. This thing is saying I can mint VBucks to respawn!"
+    ks "It’s alright. This thing is saying I can mint V-Bucks to respawn!"
 
     scene bg fortnite
     with dissolve
@@ -121,7 +127,7 @@ label ph_date:
     sy "*Footsteps nearby*"
     mc "Shit! Hanami HELP!" with vpunch
     ph "Get down!!" with vpunch
-    sy "{i}Xx_BunnyPunter_69{/i} downed {i}xXEveningCapeXx{/i}"
+    sy "{i}Xx_BunnyPunter_69{/i} downed {i}xXEveningCapeXx{/i}" with hpunch
     sy "{i}xXEveningCapeXx{/i} left the game"
     mc "Shut up! Drink this chug jug!"
     hide hanami_speak
@@ -130,16 +136,16 @@ label ph_date:
     mc "Why is that one spinning?"
     hide kousuke_speak
     show hanami_speak
-    ph "FU-" with hpunch
-    sy "{i}Groovy-Bot{/i} downed {i}Xx_BunnyPunter_69{/i}"
-    sy "{i}Groovy-Bot{/i} downed {i}ShizuhaSimp{/i}"
+    ph "FU-" with vpunch
+    sy "{i}Groovy-Bot{/i} downed {i}Xx_BunnyPunter_69{/i}" with hpunch
+    sy "{i}Groovy-Bot{/i} downed {i}shizuhasimp{/i}" with hpunch
     hide hanami_speak
     show kousuke_speak
     ks "I’m running to you!"
     hide kousuke_speak
     show hanami_speak
-    ph "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW I’M DOWN" with vpunch
-    sy "{i}Groovy-Bot{/i} downed {i}jojusoju{/i}"
+    ph "KOUSUKE REVIVE ME KOUSUKE REVIVE ME NOW I’M DOWN!" with vpunch
+    sy "{i}Groovy-Bot{/i} downed {i}jojusoju{/i}" with hpunch
     hide hanami_speak
     show kousuke_speak
     ks "What happened, I’m crawling on the floor?"
@@ -150,8 +156,12 @@ label ph_date:
     sy "{i}Xx_BunnyPunter_69{/i} left the game"
     mc "Oh, ok."
 
-    stop music fadeout 1.0
     jump end_ph_date
 
 label end_ph_date:
+    scene bg black
+    with dissolve
+
+    stop music fadeout 1.0
+
     jump hub_2

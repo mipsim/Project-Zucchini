@@ -2,11 +2,11 @@ label find_my_friend:
     mz "Who would you like to find?"
 
     python: # Player types in name of Character
-        search_name = renpy.input("First, enter your friend's first and last name (case insensitive)", length=32)
+        search_name = renpy.input("First, enter your missing friend's full legal name (case insensitive)", length=32)
         search_name = search_name.strip()
 
     # [Hanami]
-    if search_name == "Punished Hanami" or search_name == "punished hanami":
+    if search_name == "Punished Hanami" or search_name == "punished hanami" or search_name == "Hanami" or search_name == "hanami":
         sy "Sorry, we can't find who you're looking for."
         sy "We suggest: Try using their full legal name, not the nickname they ask you to call them!"
         jump after_search
@@ -33,7 +33,8 @@ label find_my_friend:
     # [Shizuha]
     if search_name == "shizuha" or search_name == "sh1zuha" or search_name == "kibashi" or search_name == "Shizuha" or search_name == "Sh1zuha" or search_name == "Kibashi":
         sy "Sorry, we can't find who you're looking for."
-        sy "We suggest: Try using their full name, first and last. But make sure you figure it out and read it carefully"
+        sy "We suggest: Try using their full name, first and last. But make sure you figure it out and read it carefully."
+        sy "Have you watched their stream?"
         jump after_search
 
     if search_name == "Sh1zuha Kibashi" or search_name == "sh1zuha kibashi":
@@ -89,17 +90,24 @@ menu test_hanami:
     "Q: How many traffic lights are in this picture?"
 
     "A: 0":
+        hide trafficaptcha
+        with easeoutbottom
         "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "B: 7":
+        hide trafficaptcha
+        with easeoutbottom
         "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "C: 6":
+        hide trafficaptcha
+        with easeoutbottom
         "We're sorry, but that was incorrect." with hpunch
         jump after_search
     "D: 2 fuckin many":
-        "Correct!"
         hide trafficaptcha
+        with easeoutbottom
+        "Correct!"
         jump found_hanami
 
 menu test_shizuha:

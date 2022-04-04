@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "v4.1.22"
+define config.version = "v1.2.0"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -32,13 +32,13 @@ define config.version = "v4.1.22"
 define gui.about = _p("""
     Visual Novel developed by Chonkers HQ
 
-    Eli Miller - Creative Lead, Narrative
+    Eli Miller - Creative Lead, Narrative, Composer
 
     Michael Sim - Programming, Production
 
     Angela Do - Character Art
 
-    Annie Zhang - Prop Art
+    Annie Zhang - Prop Art, Composer
 
     Kat Gee - Background Illustration Art
 
