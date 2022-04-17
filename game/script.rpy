@@ -37,8 +37,16 @@ label date_stone:
     jump st_date
 
 label hub_2:
-    scene bg warped
-    with dissolve
+    if pl_found:
+        scene bg warpedb
+        with dissolve
+
+        $ ph_missing = True
+        $ sh_missing = True
+        $ st_missing = True
+    else:
+        scene bg warped
+        with dissolve
 
     play music "audio/zucchini.mp3" fadein 2.0
 
@@ -146,7 +154,7 @@ menu choose_date_2:
 
         jump hub_2
 
-    "Find My Friend":
+    "Find My Friend" if pl_found != True:
         if ph_missing != True:
             hide hanami base
         if sh_missing != True:

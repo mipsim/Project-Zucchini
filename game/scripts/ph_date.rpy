@@ -22,7 +22,7 @@ label ph_date:
     
     show hanami_speak
     with easeinright
-    ph "Sorry, thats my fucking streamer roommate. Where is-"
+    ph "Sorry, thats my fucking streamer mom. Where is-"
 
     # SFX Join
     play sound "audio/disc_join.mp3"
