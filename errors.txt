@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/scripts/ph_date.rpy", line 71: expected simple expression
-    play music "audio/outoftheparkyo.mp3" fadein
-                                                ^
+File "game/script.rpy", line 44: expected statement.
+    ph_missing = True
+               ^
+
+File "game/script.rpy", line 45: expected statement.
+    sh_missing = True
+               ^
+
+File "game/script.rpy", line 46: expected statement.
+    st_missing = True
+               ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Sat Apr  2 15:45:12 2022
+Sun Apr 17 12:36:09 2022

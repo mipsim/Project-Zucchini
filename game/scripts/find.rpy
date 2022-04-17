@@ -37,6 +37,11 @@ label find_my_friend:
         sy "Have you watched their stream?"
         jump after_search
 
+    if search_name == "shizuha kibashi" or search_name == "Shizuha Kibashi":
+        sy "Sorry, we can't find who you're looking for."
+        sy "We suggest: Check your spelling! You may be looking for someone with a similar name."
+        jump after_search
+
     if search_name == "Sh1zuha Kibashi" or search_name == "sh1zuha kibashi":
         if sh_missing != True:
             show shizuha_mad
@@ -169,7 +174,7 @@ label found_shizuha:
     hide shizuha_happy
     with easeoutleft
 
-    mz "Congratulations on finding Shizuha Kibashi!"
+    mz "Congratulations on finding Sh1zuha Kibashi!"
     jump after_search
 
 label found_stone:

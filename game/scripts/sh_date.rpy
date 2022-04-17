@@ -336,6 +336,7 @@ label sh_date_4:
     hide shizuha_neutral
     show shizuha_sad at st_intro_two
     sh "I just didn’t want you to realize it was me behind the cute persona."
+    sh "The Kibashi family has a reputation to uphold, you know?"
     sh "It’s weird, but it makes me happy to relax sometimes."
     mc "You’re usually so stone faced with me and Hanami and Stone, so I couldn’t put two and two together."
     
